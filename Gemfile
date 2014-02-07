@@ -18,6 +18,53 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+  gem "zurui-sass-rails"
+
+group :assets do
+  # Bootstrap
+  gem 'bootstrap-sass', :git => 'https://github.com/thomas-mcdonald/bootstrap-sass.git'
+  gem 'bootstrap-generators', :git => 'git://github.com/decioferreira/bootstrap-generators.git'  
+  gem "flat-ui-rails"
+  # Use Uglifier as compressor for JavaScript assets
+  gem 'uglifier', '>= 1.3.0'
+  gem "font-awesome-rails"
+end
+  # Use jquery as the JavaScript library
+  gem 'jquery-rails'
+  gem 'underscore-rails'
+  gem 'rails-backbone'
+  gem 'bourbon'
+  gem 'dropzonejs-rails'
+
+group :development do
+  gem "rails-erd"
+  gem 'binding_of_caller'
+  gem 'sextant'
+  gem 'quiet_assets'
+  gem 'hirb'
+  gem 'hirb-unicode'
+  gem 'better_errors'
+end
+
+gem 'carrierwave'
+gem 'mime-types'
+gem 'mini_magick'
+gem 'omniauth'
+gem "omniauth-facebook"
+gem "omniauth-twitter"
+gem 'omniauth-google-oauth2'
+gem 'devise'
+gem 'acts_as_commentable'
+gem 'acts-as-taggable-on'
+gem 'rspec-rails'
+gem 'pry-rails'
+gem 'rails_config'
+gem 'cancan'
+gem 'party_boy'
+gem 'ransack'
+gem 'public_activity'
+gem 'reditor'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
