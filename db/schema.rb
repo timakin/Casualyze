@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140208113619) do
+ActiveRecord::Schema.define(version: 20140208125842) do
 
   create_table "boards", force: true do |t|
     t.string   "board_name"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20140208113619) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "board_id"
   end
 
   create_table "users", force: true do |t|

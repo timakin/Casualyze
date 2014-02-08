@@ -4,31 +4,39 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    @topics = Topic.all
+    @board = Board.find(params[:board_id])
+    @topics = @board.topics.all
   end
 
   # GET /topics/1
   # GET /topics/1.json
   def show
+    @board = Board.find(params[:board_id])
+    @topic = @board.topics.find(params[:id])
   end
 
   # GET /topics/new
   def new
-    @topic = Topic.new
+    @board = Board.find(params[:board_id])
+    @topic = @board.topics.build
   end
 
   # GET /topics/1/edit
   def edit
+    @board = Board.find(params[:board_id])
+    @topic = @board.topics.find(params[:id])
   end
 
   # POST /topics
   # POST /topics.json
   def create
-    @topic = Topic.new(topic_params)
+    @board = Board.find(params[:board_id])
+    @topic = @board.topics.create(topic_params)
+#    @topic = Topic.new(topic_params)
 
     respond_to do |format|
       if @topic.save
-        format.html { redirect_to @topic, notice: 'Topic was successfully created.' }
+        format.html { redirect_to [@board, @topic], notice: 'Topic was successfully created.' }
         format.json { render action: 'show', status: :created, location: @topic }
       else
         format.html { render action: 'new' }
@@ -40,9 +48,12 @@ class TopicsController < ApplicationController
   # PATCH/PUT /topics/1
   # PATCH/PUT /topics/1.json
   def update
+    @board = Board.find(params[:board_id])
+    @topic = @board.topics.find(params[:id])
+
     respond_to do |format|
-      if @topic.update(topic_params)
-        format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }
+      if @topic.update_attributes(topic_params)
+        format.html { redirect_to [@board, @topic], notice: 'Topic was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -54,9 +65,12 @@ class TopicsController < ApplicationController
   # DELETE /topics/1
   # DELETE /topics/1.json
   def destroy
+    @board = Board.find(params[:board_id])
+    @topic = @board.topics.find(params[:id])
     @topic.destroy
+
     respond_to do |format|
-      format.html { redirect_to topics_url }
+      format.html { redirect_to board_topics_url }
       format.json { head :no_content }
     end
   end

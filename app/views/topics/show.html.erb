@@ -15,5 +15,5 @@
   <%= @topic.content %>
 </p>
 
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Back', topics_path %>
+<%= link_to 'Edit', edit_board_topic_path(@board, @topic) %> |
+<%= link_to 'Back', board_topics_path(@board) %>
