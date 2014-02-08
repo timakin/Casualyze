@@ -149,6 +149,7 @@ GEM
       omniauth-oauth (~> 1.0)
     orm_adapter (0.5.0)
     party_boy (0.3.4)
+    pg (0.15.1)
     polyamorous (0.6.4)
       activerecord (>= 3.0)
     polyglot (0.3.3)
@@ -287,6 +288,7 @@ DEPENDENCIES
   omniauth-google-oauth2
   omniauth-twitter
   party_boy
+  pg
   pry-rails
   public_activity
   quiet_assets
