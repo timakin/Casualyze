@@ -4,33 +4,33 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    @board = Board.find(params[:board_id])
+    @board = Board.friendly.find(params[:board_id])
     @topics = @board.topics.all
   end
 
   # GET /topics/1
   # GET /topics/1.json
   def show
-    @board = Board.find(params[:board_id])
+    @board = Board.friendly.find(params[:board_id])
     @topic = @board.topics.find(params[:id])
   end
 
   # GET /topics/new
   def new
-    @board = Board.find(params[:board_id])
+    @board = Board.friendly.find(params[:board_id])
     @topic = @board.topics.build
   end
 
   # GET /topics/1/edit
   def edit
-    @board = Board.find(params[:board_id])
+    @board = Board.friendly.find(params[:board_id])
     @topic = @board.topics.find(params[:id])
   end
 
   # POST /topics
   # POST /topics.json
   def create
-    @board = Board.find(params[:board_id])
+    @board = Board.friendly.find(params[:board_id])
     @topic = @board.topics.create(topic_params)
 #    @topic = Topic.new(topic_params)
 
@@ -48,7 +48,7 @@ class TopicsController < ApplicationController
   # PATCH/PUT /topics/1
   # PATCH/PUT /topics/1.json
   def update
-    @board = Board.find(params[:board_id])
+    @board = Board.friendly.find(params[:board_id])
     @topic = @board.topics.find(params[:id])
 
     respond_to do |format|
@@ -65,7 +65,7 @@ class TopicsController < ApplicationController
   # DELETE /topics/1
   # DELETE /topics/1.json
   def destroy
-    @board = Board.find(params[:board_id])
+    @board = Board.friendly.find(params[:board_id])
     @topic = @board.topics.find(params[:id])
     @topic.destroy
 

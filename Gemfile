@@ -69,6 +69,7 @@ gem 'party_boy'
 gem 'ransack'
 gem 'public_activity'
 gem 'reditor'
+gem 'friendly_id'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

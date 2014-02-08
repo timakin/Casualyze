@@ -17,3 +17,6 @@ http://qiita.com/weed/items/676e47e20bfe04f0e442
 
 ###ActiveModel::ForbiddenAttributesErrorというエラーへの対処
 http://d.hatena.ne.jp/shinriyo/20130407/p1
+
+###friendly_idがRails4で仕様変更になったことについて
+http://hima-j.in/rails/currybu-update-rails-4/
