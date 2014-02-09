@@ -90,6 +90,8 @@ GEM
     flat-ui-rails (0.0.2)
     font-awesome-rails (4.0.3.1)
       railties (>= 3.2, < 5.0)
+    foreigner (1.6.1)
+      activerecord (>= 3.0.0)
     friendly_id (5.0.2)
       activerecord (~> 4.0.0)
     hashie (2.0.5)
@@ -279,6 +281,7 @@ DEPENDENCIES
   dropzonejs-rails
   flat-ui-rails
   font-awesome-rails
+  foreigner
   friendly_id
   hirb
   hirb-unicode

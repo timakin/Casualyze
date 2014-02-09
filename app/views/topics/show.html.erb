@@ -15,5 +15,16 @@
   <%= @topic.content %>
 </p>
 
+<h3></h3>
+<% @topic.comments.each do |comment| %>
+	<div>
+		<strong><%= comment.name %></strong>
+		</br>
+		<p><%= comment.body %></p>
+	</div>
+<% end %>
+
+<%= render 'comments/form' %>
+
 <%= link_to 'Edit', edit_board_topic_path(@board, @topic) %> |
 <%= link_to 'Back', board_topics_path(@board) %>

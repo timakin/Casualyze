@@ -13,7 +13,8 @@ class TopicsController < ApplicationController
   def show
     @board = Board.friendly.find(params[:board_id])
     @topic = @board.topics.find(params[:id])
-  end
+		@comment = @topic.comments.build
+	end
 
   # GET /topics/new
   def new

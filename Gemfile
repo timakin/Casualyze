@@ -70,6 +70,7 @@ gem 'ransack'
 gem 'public_activity'
 gem 'reditor'
 gem 'friendly_id'
+gem 'foreigner'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
