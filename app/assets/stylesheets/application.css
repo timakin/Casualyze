@@ -11,3 +11,15 @@
  *= require_self
  *= require_tree .
  */
+
+.sidemenu{
+	float: left;
+	width: 150px;
+	overflow: scroll;
+	background-color: white;
+}
+
+.content{
+	float: left;
+	
+}
