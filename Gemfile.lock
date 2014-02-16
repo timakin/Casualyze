@@ -204,6 +204,7 @@ GEM
       polyamorous (~> 0.6.0)
     rdoc (4.1.1)
       json (~> 1.4)
+    redcarpet (3.0.0)
     reditor (0.3.3)
       hotwater (~> 0.1.2)
       rake (~> 10.1.0)
@@ -303,6 +304,7 @@ DEPENDENCIES
   rails-erd
   rails_config
   ransack
+  redcarpet
   reditor
   rspec-rails
   sass-rails (~> 4.0.0)

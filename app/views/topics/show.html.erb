@@ -12,7 +12,7 @@
 
 <p>
   <strong>Content:</strong>
-  <%= @topic.content %>
+  <%= markdown @topic.content %>
 </p>
 
 <h3></h3>
@@ -20,7 +20,7 @@
 	<div>
 		<strong><%= comment.name %></strong>
 		</br>
-		<p><%= comment.body %></p>
+		<%= comment.body %>
 	</div>
 <% end %>
 

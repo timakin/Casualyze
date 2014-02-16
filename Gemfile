@@ -71,6 +71,7 @@ gem 'public_activity'
 gem 'reditor'
 gem 'friendly_id'
 gem 'foreigner'
+gem 'redcarpet'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

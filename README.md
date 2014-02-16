@@ -24,3 +24,9 @@ http://hima-j.in/rails/currybu-update-rails-4/
 ###コメント機能をforeigner gemを使って実装
 http://railsgirls.jp/commenting/
 
+###マークダウンの実装
+http://railscasts.com/episodes/272-markdown-with-redcarpet?language=ja&view=asciicast
+http://tkkbn.hatenablog.com/entry/2013/09/19/212757
+http://qiita.com/MERON/items/f8f79228fac1e1d9f942
+
+
