@@ -72,6 +72,8 @@ gem 'reditor'
 gem 'friendly_id'
 gem 'foreigner'
 gem 'redcarpet'
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -1,6 +1,0 @@
-<div class="sidemenu">
-	<h1>板一覧</h1></br>
-	<% for i in Board.all %>
-		<%= link_to i['board_name'], board_topics_path(i) %></br>
-	<% end %>
-</div>

@@ -1,27 +1,37 @@
-<h1>Listing boards</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Board name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @boards.each do |board| %>
-      <tr>
-				<td><%= board.board_name %></td>
-        <td><%= link_to 'Show', board %></td>
-        <td><%= link_to 'Edit', edit_board_path(board) %></td>
-        <td><%= link_to 'Destroy', board, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-			</tr>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">test</div>
+    <div class="col-md-4">test</div>
+    <div class="col-md-4">test</div>
+  </div>    
+  <div class="row">
+    <% @boards.each do |b| %>
+      <div class="col-md-8"><%= b.board_name %></div>
+      <div class="col-md-4"><%= link_to 'Edit', edit_board_path(b) %></div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Board name</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>  
 
-<br>
+    <tbody>
+      <% @boards.each do |board| %>
+        <tr>
+  				<td><%= board.board_name %></td>
+          <td><%= link_to 'Show', board %></td>
+          <td><%= link_to 'Edit', edit_board_path(board) %></td>
+          <td><%= link_to 'Destroy', board, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  			</tr>
+      <% end %>
+    </tbody>
+  </table>  
+  <br>  
 
-<%= link_to 'New Board', new_board_path %>
+  <%= link_to '新規作成', new_board_path %>
+</div>

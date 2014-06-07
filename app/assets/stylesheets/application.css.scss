@@ -12,11 +12,16 @@
  *= require_tree .
  */
 
-.sidemenu{
+.sidemenu {
 	float: left;
 	width: 150px;
 	overflow: scroll;
-	background-color: white;
+	background-color: black;
+  
+  .sidemenu_list{
+    list-style: none;
+    color: white;
+  }
 }
 
 .content{
