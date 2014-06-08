@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', :group => [:development, :test]
+#gem 'sqlite3', :group => [:development, :test]
+gem 'mysql2', :group => [:development, :test]
 
 group :production do
   gem 'pg'
@@ -22,8 +23,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
-  gem "zurui-sass-rails"
+gem "zurui-sass-rails"
 
 group :assets do
   # Bootstrap
