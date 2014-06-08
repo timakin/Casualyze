@@ -4,4 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
 	@sidemenu_contents = Board.all
+  def main_header
+    render :file => 'layouts/header/_main_header.html.erb'
+  end
 end
