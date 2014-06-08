@@ -9,3 +9,14 @@
 a, a:link {
 	text-decoration: none;
 }
+
+.navbar-custom {
+	background-color: white;
+}
+
+li.dropdown.open {
+	a.dropdown-toggle:focus {
+		color: white;
+		background-color: #E74C3C;
+	}
+}

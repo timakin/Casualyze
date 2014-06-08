@@ -1,21 +1,18 @@
 Nyanda::Application.routes.draw do
+  devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :comments
-
-  resources :boards
-
   resources :boards do
 		resources :topics
 	end
-  devise_for :users
   get "home/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root :to => "home#index"
+  root :to => "boards#index"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
