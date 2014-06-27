@@ -1,5 +1,10 @@
 ActiveAdmin.register AdminUser do
-  permit_params :email, :password, :password_confirmation
+  permit_params :utf8, :_method, :authenticity_token, :commit, :id, model: [:category, :board]
+  controller do
+    def permitted_params
+      params.permit admin_user: [:email, :password, :password_confirmation], :category => [:name]
+    end
+  end
 
   index do
     selectable_column

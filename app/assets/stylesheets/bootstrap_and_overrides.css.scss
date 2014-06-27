@@ -6,17 +6,114 @@
   =require twitter-bootstrap-static/fontawesome
 */
 
+
+textarea:hover, 
+input:hover, 
+textarea:active, 
+input:active, 
+textarea:focus, 
+input:focus,
+button:focus,
+button:active,
+button:hover
+{
+    outline:0px !important;
+  /*  -webkit-appearance:none; */
+}
+
 a, a:link {
 	text-decoration: none;
 }
+	a.navbar-brand {
+			height: 60px;
+			line-height: 35px;
+			text-align: center;
+	}
+.navbar-nav {
+	li > a.login_modal {
+		height: 60px;
+		line-height: 35px;
+		font-weight: bold;
+		letter-spacing: 2px;
+	}
+	li.dropdown {
+		a {
+			font-weight: bold;
+			letter-spacing: 2px;
+		}
+		a:hover {
+			color: #f2706c;
+		}
+	}
+}
 
 .navbar-custom {
-	background-color: white;
+	background: #fff;
+	box-shadow: 0 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+li.dropdown {
+	a.dropdown-toggle {
+			height: 60px;
+			line-height: 35px;
+			text-align: center;
+	}
+	a.dropdown-toggle:hover {
+			border-bottom: 4px solid #f2706c;
+			transition: all 0.25s ease-in-out;
+	}
 }
 
 li.dropdown.open {
 	a.dropdown-toggle:focus {
 		color: white;
-		background-color: #E74C3C;
+		background-color: #f2706c;
 	}
+}
+.dropdown-menu > li {
+	a:hover {
+		background: white;
+	}
+}
+
+li.dropdown_menu_list {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+/*
+	Button settings
+*/
+.btn-primary {
+	background-color: #4FC1E9;
+	border-color: #4FC1E9;
+}
+.btn-primary:hover {
+	background-color: #3BAFDA;
+	border-color: #3BAFDA;
+}
+
+/* 
+	Login settings
+*/
+a.login_modal {
+	text-align: center;
+}
+a.login_modal:hover {
+				border-bottom: 4px solid #f2706c;
+			transition: all 0.25s ease-in-out;	
+}
+
+.login_form {
+	border: 2px solid #ddd;
+	transition: all 0.15s ease-in-out;
+	height: 40px;
+	padding-left: 5px;
+	border-radius: 5px;
+	margin-bottom: 5px;
+}
+.login_form:focus {
+	border-color: #da552f;
+	outline: 0;
 }

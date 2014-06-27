@@ -29,4 +29,6 @@ http://railscasts.com/episodes/272-markdown-with-redcarpet?language=ja&view=asci
 http://tkkbn.hatenablog.com/entry/2013/09/19/212757
 http://qiita.com/MERON/items/f8f79228fac1e1d9f942
 
+###Active_adminでutf8, :authenticity_tokenのエラーが出たときの対処
+
 

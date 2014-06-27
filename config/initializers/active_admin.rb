@@ -13,8 +13,6 @@ ActiveAdmin.setup do |config|
   # config.site_title_link = "/"
 
   # Set an optional image to be displayed for the header
-  # instead of a string (overrides :site_title)
-  #
   # Note: Aim for an image that's 21px high so it fits in the header.
   #
   # config.site_title_image = "logo.png"
@@ -240,4 +238,7 @@ ActiveAdmin.setup do |config|
   #
   # config.filters = true
 
+  def resource_params
+    [(params[resource_request_name] || params[resource_instance_name]).try(:permit!) || {}]
+  end
 end

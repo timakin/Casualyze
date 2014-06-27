@@ -1,9 +1,9 @@
 class CreateComments < ActiveRecord::Migration
   def change
     create_table :comments do |t|
-      t.string :name
-      t.text :body
-      t.integer :topic_id
+      t.string :name, :null => false, :default => ""
+      t.text :body, :null => false
+      t.integer :topic_id, :null => false
 
       t.timestamps
     end

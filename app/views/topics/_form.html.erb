@@ -1,4 +1,4 @@
-<%= form_for [@board, @topic] do |f| %>
+<%= form_for [@category, @board, @topic] do |f| %>
   <% if @topic.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@topic.errors.count, "error") %> prohibited this topic from being saved:</h2>
@@ -16,15 +16,13 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
     <%= f.label :content %><br>
     <%= f.text_area :content %>
   </div>
   <div class="field">
     <%= f.hidden_field :board_id, :value => params[:board_id] %>
+    <%= f.hidden_field :user_id, :value => current_user %>
+    <%= f.hidden_field :category_id, :value => params[:category_id] %>
   </end>
   <div class="actions">
     <%= f.submit %>

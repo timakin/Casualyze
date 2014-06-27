@@ -9,6 +9,7 @@ development:
   database: dev_nyanda
   username: root
   password: tima0313
+  host: localhost
   pool: 5
   timeout: 5000
   socket: /tmp/mysql.sock
@@ -22,6 +23,7 @@ test:
   database: dev_nyanda
   username: root
   password: tima0313
+  host: localhost
   pool: 5
   timeout: 5000
   socket: /tmp/mysql.sock

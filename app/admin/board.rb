@@ -1,5 +1,5 @@
 ActiveAdmin.register Board do
-
+  belongs_to :category
   
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -13,5 +13,5 @@ ActiveAdmin.register Board do
   #  permitted << :other if resource.something?
   #  permitted
   # end
-  
+ permit_params :board_name, :id, :category_id
 end

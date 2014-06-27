@@ -28,18 +28,19 @@ gem "zurui-sass-rails"
 group :assets do
   # Bootstrap
   gem 'bootstrap-sass', :git => 'https://github.com/thomas-mcdonald/bootstrap-sass.git'
-  gem 'bootstrap-generators', :git => 'git://github.com/decioferreira/bootstrap-generators.git'  
+  gem 'bootstrap-generators', :git => 'git://github.com/decioferreira/bootstrap-generators.git'
   gem "flat-ui-rails"
   # Use Uglifier as compressor for JavaScript assets
   gem 'uglifier', '>= 1.3.0'
   gem "font-awesome-rails"
 end
-  # Use jquery as the JavaScript library
-  gem 'jquery-rails'
-  gem 'underscore-rails'
-  gem 'rails-backbone'
-  gem 'bourbon'
-  gem 'dropzonejs-rails'
+
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+gem 'underscore-rails'
+gem 'rails-backbone'
+gem 'bourbon'
+gem 'dropzonejs-rails'
 
 group :development do
   gem "rails-erd"
@@ -74,7 +75,8 @@ gem 'foreigner'
 gem 'redcarpet'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'
-
+gem "polyamorous", :github => "activerecord-hackery/polyamorous"
+gem "formtastic", github: "justinfrench/formtastic"
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 

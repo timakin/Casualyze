@@ -4,31 +4,32 @@ class BoardsController < ApplicationController
   # GET /boards
   # GET /boards.json
   def index
+#    @category = Category.find(params[:category_id])
     @boards = Board.all
   end
 
   # GET /boards/1
   # GET /boards/1.json
   def show
+    @category = Category.find(params[:category_id])
+    @boards = @category.boards.find(params[:id])
   end
 
   # GET /boards/new
   def new
-    @board = Board.new
-  end
-
-  # GET /boards/1/edit
-  def edit
+    @category = Category.find(params[:category_id])
+    @board = @category.boards.new
   end
 
   # POST /boards
   # POST /boards.json
   def create
-    @board = Board.new(board_params)
+    @category = Category.find(params[:category_id])
+    @board = @category.boards.new(board_params)
 
     respond_to do |format|
       if @board.save
-        format.html { redirect_to @board, notice: 'Board was successfully created.' }
+        format.html { redirect_to [@category, @board], notice: 'Board was successfully created.' }
         format.json { render action: 'show', status: :created, location: @board }
       else
         format.html { render action: 'new' }
@@ -40,9 +41,10 @@ class BoardsController < ApplicationController
   # PATCH/PUT /boards/1
   # PATCH/PUT /boards/1.json
   def update
+    @category = Category.find(params[:category_id])
     respond_to do |format|
-      if @board.update(board_params)
-        format.html { redirect_to @board, notice: 'Board was successfully updated.' }
+      if @category.boards.update(board_params)
+        format.html { redirect_to [@category, @board], notice: 'Board was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -54,9 +56,11 @@ class BoardsController < ApplicationController
   # DELETE /boards/1
   # DELETE /boards/1.json
   def destroy
+    @category = Category.find(params[:category_id])
+    @board = @category.boards.find(params[:id])
     @board.destroy
     respond_to do |format|
-      format.html { redirect_to boards_url }
+      format.html { redirect_to category_boards_url(@category) }
       format.json { head :no_content }
     end
   end
@@ -64,7 +68,8 @@ class BoardsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_board
-      @board = Board.friendly.find(params[:id])
+      @category = Category.find(params[:category_id])
+      @board = @category.boards.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

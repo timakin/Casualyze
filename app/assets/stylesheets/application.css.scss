@@ -9,7 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require_directory .
  */
 
 .sidemenu {
@@ -24,6 +24,28 @@
   }
 }
 
+.login_modal {
+	cursor: pointer;
+}
+
 .content{
 	float: left;	
+}
+
+.topic {
+	height: 100px;
+
+	.topic_title {
+		background-color: orange;
+		padding: 10px;
+		color: white;
+		font-weight: bold;
+		p { 
+			margin: 0px;
+			font-size: 18px;
+		}
+	}
+	.topic_content {
+		padding: 10px;
+	}
 }
