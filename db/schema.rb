@@ -47,27 +47,27 @@ ActiveRecord::Schema.define(version: 20140608082534) do
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "boards", force: true do |t|
-    t.string   "board_name"
+    t.string   "board_name",  default: "", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "category_id"
+    t.integer  "category_id",              null: false
   end
 
   create_table "categories", force: true do |t|
-    t.string   "name"
+    t.string   "name",       default: "", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "comments", force: true do |t|
-    t.string   "name"
-    t.text     "body"
-    t.integer  "topic_id"
+    t.string   "name",        default: "", null: false
+    t.text     "body",                     null: false
+    t.integer  "topic_id",                 null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "board_id"
-    t.integer  "category_id"
+    t.integer  "category_id",              null: false
   end
 
   add_index "comments", ["topic_id"], name: "comments_topic_id_fk", using: :btree
@@ -91,14 +91,13 @@ ActiveRecord::Schema.define(version: 20140608082534) do
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
   create_table "topics", force: true do |t|
-    t.string   "title"
-    t.string   "name"
-    t.text     "content"
+    t.string   "title",       default: "", null: false
+    t.text     "content",                  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "board_id"
+    t.integer  "board_id",                 null: false
     t.integer  "user_id"
-    t.integer  "category_id"
+    t.integer  "category_id",              null: false
   end
 
   create_table "users", force: true do |t|

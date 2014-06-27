@@ -1,5 +1,5 @@
-<h1>New topic</h1>
+<h1>トピック投稿</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', board_topics_path %>
+<%= link_to 'Back', category_board_topics_path(@category, @board) %>

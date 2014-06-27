@@ -1,6 +1,22 @@
-<h1>TOP</h1>
-<% if user_signed_in? %>
-<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-<% else %>
-<%= link_to "ログイン", new_user_session_path %>
-<% end %>
+<div class="row">
+	<div class="col-md-9">
+		<% @topics.each do |t| %>
+				<div class="topic">
+					<div class="topic_title">
+						<p><%= t.title %></p>
+					</div>
+					<div class="topic_content">
+						<p><%= t.content %></p>
+					</div>
+				</div>
+		<% end %>
+	</div>
+	<div class="col-md-3">
+		<ul class="category_list">
+			<li><a href="">カテゴリ１</a></li>
+			<li><a href="">カテゴリ２</a></li>
+			<li><a href="">カテゴリ３</a></li>
+			<li><a href="">カテゴリ４</a></li>
+		</ul>
+	</div>
+</div>

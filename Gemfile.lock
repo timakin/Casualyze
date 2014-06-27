@@ -1,13 +1,20 @@
 GIT
-  remote: git://github.com/decioferreira/bootstrap-generators.git
-  revision: 686217a26cf7071a9ad054b57031b92bba6a3a3e
+  remote: git://github.com/activerecord-hackery/polyamorous.git
+  revision: 69ce1f436ee93dcb011631bb727a6e3ab38a27f4
   specs:
-    bootstrap-generators (3.1.0)
-      railties (>= 3.1)
+    polyamorous (1.0.0)
+      activerecord (>= 3.0)
+
+GIT
+  remote: git://github.com/decioferreira/bootstrap-generators.git
+  revision: 41d35849737e7408be1c1ac7602251c4758aaa51
+  specs:
+    bootstrap-generators (3.1.1.3)
+      railties (>= 3.1.0)
 
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: f99eef71df31504055f50438128e8cfc0d1a7809
+  revision: 4f445b51c22b12af2cdde57fe2ce9835c32ef88e
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0)
@@ -23,8 +30,15 @@ GIT
       sass-rails
 
 GIT
+  remote: git://github.com/justinfrench/formtastic.git
+  revision: ee69d3355bd443d40472147a2d087ed4a5b5af9b
+  specs:
+    formtastic (2.3.0.rc3)
+      actionpack (>= 3.2.13)
+
+GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
-  revision: cee3c805830bf84628bb93bc1f6f85931ef7a041
+  revision: feb28d576cdcf3bf9fc6ff4ab206286adf56c68c
   branch: bootstrap3
   specs:
     twitter-bootstrap-rails (3.1.1)
@@ -35,9 +49,10 @@ GIT
 
 GIT
   remote: https://github.com/thomas-mcdonald/bootstrap-sass.git
-  revision: 4f8c3465477a2e27a7197ac9493817d4c101b867
+  revision: 380fb83045f8417c23c6b6ad9310e545621032b7
   specs:
-    bootstrap-sass (3.1.0.2)
+    bootstrap-sass (3.1.1.1)
+      autoprefixer-rails (~> 1.1)
       sass (~> 3.2)
 
 GEM
@@ -67,28 +82,30 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
-    acts-as-taggable-on (3.0.1)
-      rails (>= 3, < 5)
+    acts-as-taggable-on (3.2.6)
+      activerecord (>= 3, < 5)
     acts_as_commentable (4.0.1)
     arbre (1.0.1)
       activesupport (>= 3.0.0)
-    arel (4.0.1)
-    atomic (1.1.14)
-    bcrypt-ruby (3.1.2)
+    arel (4.0.2)
+    autoprefixer-rails (1.1.20140605)
+      execjs
+    bcrypt (3.1.7)
     better_errors (1.1.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bourbon (3.1.8)
-      sass (>= 3.2.0)
+    bourbon (3.2.3)
+      sass (~> 3.2)
       thor
     builder (3.1.4)
     cancan (1.6.10)
-    carrierwave (0.9.0)
+    carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       json (>= 1.7)
+      mime-types (>= 1.16)
     choice (0.1.6)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -99,62 +116,51 @@ GEM
       execjs
     coffee-script-source (1.7.0)
     debug_inspector (0.0.2)
-    devise (3.2.2)
-      bcrypt-ruby (~> 3.0)
+    devise (3.2.4)
+      bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
-    dropzonejs-rails (0.4.13)
+    dropzonejs-rails (0.4.16)
       rails (> 3.1)
-    ejs (1.0.0)
+    ejs (1.1.1)
     erubis (2.7.0)
-    execjs (2.0.2)
+    execjs (2.2.0)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
-    ffi (1.9.3)
-    ffi-compiler (0.1.3)
-      ffi (>= 1.0.0)
-      rake
     flat-ui-rails (0.0.2)
-    font-awesome-rails (4.0.3.1)
+    font-awesome-rails (4.1.0.0)
       railties (>= 3.2, < 5.0)
     foreigner (1.6.1)
       activerecord (>= 3.0.0)
-    formtastic (2.3.0.rc3)
-      actionpack (>= 3.0)
-    friendly_id (5.0.2)
-      activerecord (~> 4.0.0)
+    friendly_id (5.0.4)
+      activerecord (>= 4.0.0)
     has_scope (0.6.0.rc)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
-    hashie (2.0.5)
+    hashie (2.1.1)
     hike (1.2.3)
-    hirb (0.7.1)
+    hirb (0.7.2)
     hirb-unicode (0.0.5)
       hirb (~> 0.5)
       unicode-display_width (~> 0.1.1)
-    hotwater (0.1.2)
-      ffi
-      ffi-compiler
-      rake
     i18n (0.6.9)
-    inherited_resources (1.4.1)
+    inherited_resources (1.5.0)
       has_scope (~> 0.6.0.rc)
-      responders (~> 1.0.0.rc)
+      responders (~> 1.0)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
-    jquery-rails (3.1.0)
+    jquery-rails (2.1.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (4.2.1)
       railties (>= 3.2.16)
     json (1.8.1)
-    jwt (0.1.11)
-      multi_json (>= 1.5)
-    kaminari (0.15.1)
+    jwt (1.0.0)
+    kaminari (0.16.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     mail (2.5.4)
@@ -165,14 +171,14 @@ GEM
     mini_magick (3.7.0)
       subexec (~> 0.2.1)
     minitest (4.7.5)
-    multi_json (1.8.4)
+    multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    mysql2 (0.3.11)
+    mysql2 (0.3.16)
     oauth (0.4.7)
-    oauth2 (0.9.3)
+    oauth2 (0.9.4)
       faraday (>= 0.8, < 0.10)
-      jwt (~> 0.1.8)
+      jwt (~> 1.0)
       multi_json (~> 1.3)
       multi_xml (~> 0.5)
       rack (~> 1.2)
@@ -181,9 +187,9 @@ GEM
       rack (~> 1.0)
     omniauth-facebook (1.6.0)
       omniauth-oauth2 (~> 1.1)
-    omniauth-google-oauth2 (0.2.2)
+    omniauth-google-oauth2 (0.2.4)
       omniauth (~> 1.0)
-      omniauth-oauth2
+      omniauth-oauth2 (~> 1.1)
     omniauth-oauth (1.0.1)
       oauth
       omniauth (~> 1.0)
@@ -197,10 +203,8 @@ GEM
       omniauth-oauth (~> 1.0)
     orm_adapter (0.5.0)
     party_boy (0.3.4)
-    pg (0.15.1)
-    polyamorous (0.6.4)
-      activerecord (>= 3.0)
-    polyglot (0.3.3)
+    pg (0.17.1)
+    polyglot (0.3.5)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -225,61 +229,67 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.0.2)
       sprockets-rails (~> 2.0.0)
-    rails-backbone (0.7.2)
+    rails-backbone (0.9.10)
       coffee-script (~> 2.2.0)
-      ejs (~> 1.0.0)
+      ejs (~> 1.1.1)
+      jquery-rails (~> 2.1.3)
       railties (>= 3.1.0)
     rails-erd (1.1.0)
       activerecord (>= 3.0)
       activesupport (>= 3.0)
       choice (~> 0.1.6)
       ruby-graphviz (~> 1.0.4)
-    rails_config (0.3.3)
+    rails_config (0.4.2)
       activesupport (>= 3.0)
     railties (4.0.2)
       actionpack (= 4.0.2)
       activesupport (= 4.0.2)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (10.1.1)
-    ransack (1.1.0)
+    rake (10.3.2)
+    ransack (1.2.3)
       actionpack (>= 3.0)
       activerecord (>= 3.0)
-      polyamorous (~> 0.6.0)
+      activesupport (>= 3.0)
+      i18n
+      polyamorous (~> 1.0.0)
     rdoc (4.1.1)
       json (~> 1.4)
-    redcarpet (3.0.0)
-    reditor (0.3.3)
-      hotwater (~> 0.1.2)
-      rake (~> 10.1.0)
-      thor (~> 0.18.1)
-    responders (1.0.0)
+    redcarpet (3.1.2)
+    reditor (0.1.1)
+      thor (>= 0.15.4)
+    responders (1.1.0)
       railties (>= 3.2, < 5)
-    rspec-core (2.14.7)
-    rspec-expectations (2.14.5)
-      diff-lcs (>= 1.1.3, < 2.0)
-    rspec-mocks (2.14.5)
-    rspec-rails (2.14.1)
+    rspec-core (3.0.0)
+      rspec-support (~> 3.0.0)
+    rspec-expectations (3.0.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.0.0)
+    rspec-mocks (3.0.1)
+      rspec-support (~> 3.0.0)
+    rspec-rails (3.0.1)
       actionpack (>= 3.0)
-      activemodel (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
-      rspec-core (~> 2.14.0)
-      rspec-expectations (~> 2.14.0)
-      rspec-mocks (~> 2.14.0)
+      rspec-core (~> 3.0.0)
+      rspec-expectations (~> 3.0.0)
+      rspec-mocks (~> 3.0.0)
+      rspec-support (~> 3.0.0)
+    rspec-support (3.0.0)
     ruby-graphviz (1.0.9)
-    sass (3.2.14)
-    sass-rails (4.0.1)
+    sass (3.2.19)
+    sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
-      sass (>= 3.1.10)
-      sprockets-rails (~> 2.0.0)
+      sass (~> 3.2.0)
+      sprockets (~> 2.8, <= 2.11.0)
+      sprockets-rails (~> 2.0)
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
     sextant (0.2.4)
       rails (>= 3.2)
-    slop (3.4.7)
-    sprockets (2.10.1)
+    slop (3.5.0)
+    sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
@@ -289,20 +299,19 @@ GEM
       activesupport (>= 3.0)
       sprockets (~> 2.8)
     subexec (0.2.3)
-    thor (0.18.1)
-    thread_safe (0.1.3)
-      atomic
+    thor (0.19.1)
+    thread_safe (0.3.4)
     tilt (1.4.1)
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (2.2.1)
+    turbolinks (2.2.2)
       coffee-rails
-    tzinfo (0.3.38)
-    uglifier (2.4.0)
+    tzinfo (0.3.39)
+    uglifier (2.5.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    underscore-rails (1.5.2)
+    underscore-rails (1.6.0)
     unicode-display_width (0.1.1)
     warden (1.2.3)
       rack (>= 1.0)
@@ -329,6 +338,7 @@ DEPENDENCIES
   flat-ui-rails
   font-awesome-rails
   foreigner
+  formtastic!
   friendly_id
   hirb
   hirb-unicode
@@ -343,6 +353,7 @@ DEPENDENCIES
   omniauth-twitter
   party_boy
   pg
+  polyamorous!
   pry-rails
   public_activity
   quiet_assets

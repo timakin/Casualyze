@@ -4,40 +4,42 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    @board = Board.friendly.find(params[:board_id])
+    @category = Category.find(params[:category_id])
+    @board = @category.boards.find(params[:board_id])
     @topics = @board.topics.all
   end
 
   # GET /topics/1
   # GET /topics/1.json
   def show
-    @board = Board.friendly.find(params[:board_id])
-    @topic = @board.topics.find(params[:id])
+    @topic = set_topic
 		@comment = @topic.comments.build
 	end
 
   # GET /topics/new
   def new
-    @board = Board.friendly.find(params[:board_id])
+    @board = set_board
     @topic = @board.topics.build
   end
 
   # GET /topics/1/edit
   def edit
-    @board = Board.friendly.find(params[:board_id])
+    @board = set_board
     @topic = @board.topics.find(params[:id])
   end
 
   # POST /topics
   # POST /topics.json
   def create
-    @board = Board.friendly.find(params[:board_id])
+    @board = set_board
     @topic = @board.topics.create(topic_params)
+    @topic.category_id = params[:category_id]
+    @topic.user_id = current_user
 #    @topic = Topic.new(topic_params)
 
     respond_to do |format|
       if @topic.save
-        format.html { redirect_to [@board, @topic], notice: 'Topic was successfully created.' }
+        format.html { redirect_to [@category, @board, @topic], notice: 'Topic was successfully created.' }
         format.json { render action: 'show', status: :created, location: @topic }
       else
         format.html { render action: 'new' }
@@ -49,7 +51,7 @@ class TopicsController < ApplicationController
   # PATCH/PUT /topics/1
   # PATCH/PUT /topics/1.json
   def update
-    @board = Board.friendly.find(params[:board_id])
+    @board = set_board
     @topic = @board.topics.find(params[:id])
 
     respond_to do |format|
@@ -66,8 +68,7 @@ class TopicsController < ApplicationController
   # DELETE /topics/1
   # DELETE /topics/1.json
   def destroy
-    @board = Board.friendly.find(params[:board_id])
-    @topic = @board.topics.find(params[:id])
+    @topic = topic_params
     @topic.destroy
 
     respond_to do |format|
@@ -79,11 +80,18 @@ class TopicsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_topic
-      @topic = Topic.find(params[:id])
+      @category = Category.find(params[:category_id])
+      @board    = @category.boards.find(params[:board_id])
+      @topic = @board.topics.find(params[:id])
+    end
+
+    def set_board
+      @category = Category.find(params[:category_id])
+      @board = @category.boards.find(params[:board_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def topic_params
-      params.require(:topic).permit(:title, :name, :content)
+      params.require(:topic).permit(:title, :name, :content, :board_id, :category_id, :user_id)
     end
 end

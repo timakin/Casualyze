@@ -1,61 +1,32 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      test
-    </div>
-    <div class="col-md-4">
-      test
-    </div>
-    <div class="col-md-4">
-      test
-    </div>
-  </div>
-
+<div class="container" style="background: red;">
+  <h1><%= @board.board_name %>トピック一覧</h1>
 </div>
 
-<h1>トピック一覧</h1>
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      test
-    </div>
-    <div class="col-md-4">
-      test
-    </div>
-    <div class="col-md-4">
-      test
-    </div>
-  </div>
-
-</div>
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Name</th>
-      <th>Content</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @topics.each do |topic| %>
-      <tr>
-        <td><%= topic.title %></td>
-        <td><%= topic.name %></td>
-        <td><%= topic.content %></td>
-        <td><%= link_to 'Show', board_topic_path(topic.board, topic) %></td>
-        <td><%= link_to 'Edit', edit_board_topic_path(topic.board ,topic) %></td>
-        <td><%= link_to 'Destroy', board_topic_path(topic.board, topic), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="row">
+  <div class="col-md-9">
+    <% @topics.each do |t| %>
+        <div class="topic">
+          <div class="topic_title">
+            <p><%= link_to t.title, category_board_topic_path(@category, @board, t) %></p>
+          </div>
+          <div class="topic_content">
+            <p><%= t.content %></p>
+          </div>
+        </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+  <div class="col-md-3">
+    <ul class="category_list">
+      <li><a href="">カテゴリ１</a></li>
+      <li><a href="">カテゴリ２</a></li>
+      <li><a href="">カテゴリ３</a></li>
+      <li><a href="">カテゴリ４</a></li>
+    </ul>
+  </div>
+</div>
 
-<br>
 
-<%= link_to 'New Topic', new_board_topic_path %>
+
+
+
+<%= link_to 'New Topic', new_category_board_topic_path(@category, @board) %>
