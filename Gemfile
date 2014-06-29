@@ -50,6 +50,7 @@ group :development do
   gem 'hirb'
   gem 'hirb-unicode'
   gem 'better_errors'
+  gem 'meta_request'
 end
 
 gem 'carrierwave'
@@ -79,6 +80,7 @@ gem "polyamorous", :github => "activerecord-hackery/polyamorous"
 gem "formtastic", github: "justinfrench/formtastic"
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'rmagick', require: false
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

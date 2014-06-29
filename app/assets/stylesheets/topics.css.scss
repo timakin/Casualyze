@@ -2,14 +2,139 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.topic_title {
+
+.topic {
+	.topic_title {
+		border-radius: 3px;
+		padding: 10px;
+		font-weight: bold;
+		p { 
+			margin: 0px;
+			font-size: 18px;
+			letter-spacing: 1px;
+		}
+		a {
+			color: #6A6A6A;
+		}
+		a:hover {
+			color: #6A6A6A;
+		}
+		a:visited {
+			color: #6A6A6A;
+		}
+	}
+	.topic_title:hover {
+		border-left: 6px solid orange;
+		margin-left: -6px;
+	}
+	.odd {
+		background-color: #F6F6F6;
+	}
+	.even {
+		background-color: white;
+	}
+}
+
+.col-topic-title {
+	padding: 0px;
+}
+
+p.board_title {
+	font-family: Lato-Light;
+	color: #98979A;
+	font-size: 46px;
+	float: left;
+	margin-left:auto;
+	margin-right: auto;
+}
+
+
+p.topic-search {
+	padding-top: 8px;
+}
+input.topic-search {
+	float: right;
+	width: 100%;
+	height: 49px;
+	font-size: 18px;
+	border: 2px solid #CECECE;
+	color: #CECECE;
+	letter-spacing: 1.5px;
+}
+
+input.topic-search:focus {
+	border-color: #f2706c;
+	outline:0px !important;
+	box-shadow: none;
+	color: black;
+}
+
+button.btn-create-topic {
+	background-color: #f2706c;
+	border: 1px solid #f2706c;
+	border-radius: 0px;
+	margin-top: 8px;
+	width: 100%;
+	letter-spacing: 1.5px;
 	a {
 		color: white;
 	}
 	a:hover {
+		text-decoration: none;
+	}
+	a:focus {
+		outline:0px !important;
+	}
+}
+
+button.btn-create-topic:hover {
+	background-color: #f2706c;
+	border: 1px solid #f2706c;
+	border-radius: 0px;
+}
+
+button.btn-create-topic:focus {
+	background-color: #f2706c;
+	border: 1px solid #f2706c;
+	border-radius: 0px;
+}
+
+button.btn-user-login {
+	background-color: red;
+	border: 1px solid red;
+	border-radius: 3px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 10px;
+	width: 150px;
+	text-align: center;
+	letter-spacing: 1.5px;
+	a {
 		color: white;
 	}
-	a:visited {
+	a:hover {
+		text-decoration: none;
+	}
+	a:focus {
+		outline:0px !important;
+	}
+}
+
+button.btn-user-login:hover {
+	background-color: red;
+	border: 1px solid red;
+}
+
+button.btn-user-login:focus {
+	background-color: red;
+	border: 1px solid red;
+}
+
+.topic-show-title {
+	background: #f2706c;
+	margin-left: 0px;
+	padding-top: 20px;
+	p {
 		color: white;
 	}
 }

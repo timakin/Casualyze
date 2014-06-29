@@ -31,4 +31,7 @@ http://qiita.com/MERON/items/f8f79228fac1e1d9f942
 
 ###Active_adminでutf8, :authenticity_tokenのエラーが出たときの対処
 
+###フォント指定の方法
+http://www.serendip.ws/archives/6271
+
 

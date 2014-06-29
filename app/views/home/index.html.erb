@@ -1,22 +1,28 @@
-<div class="row">
-	<div class="col-md-9">
-		<% @topics.each do |t| %>
-				<div class="topic">
-					<div class="topic_title">
-						<p><%= t.title %></p>
+<div class="container container-top">
+	<div class="row">
+    <div class="col-topic-title">
+      <div class="col-md-9 col-topic-title">
+        <div class="col-md-7">
+          <p class="board_title">All</p>
+        </div>
+        <div class="col-md-5">
+        </div>
+      </div>
+      <div class="col-md-3">
+          <p class="topic-search"><input type="text" class="form-control topic-search" placeholder="Search..."></p>
+      </div>
+    </div>
+  </div>
+	<div class="row">
+		<div>
+			<% @topics.each do |t| %>
+					<div class="topic">
+						<div class="topic_title <%= cycle("odd", "even") %>">
+							<p><%= link_to t.title, category_board_topic_path(t.category_id, t.board_id, t.id) %></p>
+						</div>
 					</div>
-					<div class="topic_content">
-						<p><%= t.content %></p>
-					</div>
-				</div>
-		<% end %>
-	</div>
-	<div class="col-md-3">
-		<ul class="category_list">
-			<li><a href="">カテゴリ１</a></li>
-			<li><a href="">カテゴリ２</a></li>
-			<li><a href="">カテゴリ３</a></li>
-			<li><a href="">カテゴリ４</a></li>
-		</ul>
+			<% end %>
+			<%= render "devise/shared/links" %>
+		</div>
 	</div>
 </div>

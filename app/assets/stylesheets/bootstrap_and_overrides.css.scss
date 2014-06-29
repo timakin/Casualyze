@@ -17,18 +17,20 @@ button:focus,
 button:active,
 button:hover
 {
-    outline:0px !important;
+   outline:0px !important;
   /*  -webkit-appearance:none; */
 }
+
+
 
 a, a:link {
 	text-decoration: none;
 }
-	a.navbar-brand {
-			height: 60px;
-			line-height: 35px;
-			text-align: center;
-	}
+a.navbar-brand {
+	height: 60px;
+	line-height: 35px;
+	text-align: center;
+}
 .navbar-nav {
 	li > a.login_modal {
 		height: 60px;
@@ -47,6 +49,28 @@ a, a:link {
 	}
 }
 
+.navbar-right {
+	li.dropdown.open a.user-toggle:focus {
+		color: #777777;
+		background-color: white;
+		}
+	.user-toggle {
+		a.dropdown-toggle:focus {
+			color: #777777;
+		}
+	}
+	li.dropdown a:hover {
+		color: #777777;	
+	}
+	li.dropdown.open a.category-toggle:focus {
+		color: white;
+		background-color: white;
+	}
+	li.dropdown > a.dropdown-toggle:hover {
+			border-bottom: none;
+	}
+}
+
 .navbar-custom {
 	background: #fff;
 	box-shadow: 0 4px 0 rgba(0, 0, 0, 0.05);
@@ -57,6 +81,11 @@ li.dropdown {
 			height: 60px;
 			line-height: 35px;
 			text-align: center;
+			vertical-align: middle;
+			img.user_image {
+				margin-top: -6px;
+				border: none;
+			}
 	}
 	a.dropdown-toggle:hover {
 			border-bottom: 4px solid #f2706c;
@@ -101,8 +130,8 @@ a.login_modal {
 	text-align: center;
 }
 a.login_modal:hover {
-				border-bottom: 4px solid #f2706c;
-			transition: all 0.25s ease-in-out;	
+	border-bottom: 4px solid #f2706c;
+	transition: all 0.25s ease-in-out;	
 }
 
 .login_form {
@@ -117,3 +146,10 @@ a.login_modal:hover {
 	border-color: #da552f;
 	outline: 0;
 }
+
+@media (min-width: 768px){
+	.container {
+		width: 100%;
+	}
+}
+
