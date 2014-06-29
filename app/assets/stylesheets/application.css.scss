@@ -12,6 +12,82 @@
  *= require_directory .
  */
 
+@font-face {
+	font: {
+		family: 'Gotham';
+		weight: 'normal, bold';
+		style:  'normal';
+	}
+	src: asset-url('gotham-rounded-medium.otf', font) format('truetype');
+}
+
+@font-face {
+	font: {
+		family: ProximaNova;
+		weight: normal;
+		style:  normal;
+	}
+	src: url('assets/fonts/ProximaNova-Regular.otf', font);
+}
+
+@font-face {
+	font: {
+		family: 'MuseoSlab';
+		weight: 'normal, bold';
+		style:  'normal';
+	}
+	src: url('assets/fonts/Museo Slab.otf', font) format('truetype');
+}
+
+@font-face {
+	font: {
+		family: SIMPLIFICA;
+		weight: normal;
+		style:  normal;
+	}
+	src: url('assets/fonts/SIMPLIFICA.ttf', font) format('truetype');
+}
+
+@font-face {
+font-family: ‘Glyphicons Halflings’;
+src: url(‘/assets/fonts/glyphicons-halflings-regular.eot’);
+src: url(‘/asstes/fonts/glyphicons-halflings-regular.eot?#iefix’) format(‘embedded-opentype’),
+url(‘/assets/fonts/glyphicons-halflings-regular.woff’) format(‘woff’),
+url(‘/assets/fonts/glyphicons-halflings-regular.ttf’) format(‘truetype’),
+url(‘/assets/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular’) format(‘svg’);
+}
+
+@font-face {
+	font: {
+		family: 'Lato-Light';
+		weight: 'normal, bold';
+		style:  'normal';
+	}
+	src: url('fonts/Lato-Light.ttf', font) format('truetype');
+}
+
+@font-face {
+	font: {
+		family: 'Lato-Regular';
+		weight: 'normal, bold';
+		style:  'normal';
+	}
+	src: url('fonts/Lato-Regular.ttf', font) format('truetype');
+}
+
+@font-face {
+	font: {
+		family: RictyDiminished-Regular;
+		weight: normal;
+		style:  normal;
+	}
+	src: url('fonts/RictyDiminished-Regular.ttf', font) format('truetype');
+}
+
+a {
+	font-family: Gotham;
+}
+
 .sidemenu {
 	float: left;
 	width: 150px;
@@ -32,20 +108,11 @@
 	float: left;	
 }
 
-.topic {
-	height: 100px;
+.container-top {
+	padding-top: 15px;
+	padding-bottom: 300px;
+}
 
-	.topic_title {
-		background-color: orange;
-		padding: 10px;
-		color: white;
-		font-weight: bold;
-		p { 
-			margin: 0px;
-			font-size: 18px;
-		}
-	}
-	.topic_content {
-		padding: 10px;
-	}
+.container-main {
+	background-color: #FFFFFF;
 }

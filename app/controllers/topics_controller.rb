@@ -32,7 +32,7 @@ class TopicsController < ApplicationController
   # POST /topics.json
   def create
     @board = set_board
-    @topic = @board.topics.create(topic_params)
+    @topic = @board.topics.new(topic_params)
     @topic.category_id = params[:category_id]
     @topic.user_id = current_user
 #    @topic = Topic.new(topic_params)
@@ -92,6 +92,6 @@ class TopicsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def topic_params
-      params.require(:topic).permit(:title, :name, :content, :board_id, :category_id, :user_id)
+      params.require(:topic).permit(:title, :name, :content, :board_id, :category_id, :user_id, :image)
     end
 end

@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :topics, :dependent => :destroy
   has_many :comments, :through => :topics, :dependent => :destroy
+  mount_uploader :image, ImageUploader
 end
