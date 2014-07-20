@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20140627162518) do
     t.string   "board_name",  default: "", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "category_id",              null: false
+    t.integer  "category_id"
   end
 
   create_table "categories", force: true do |t|
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 20140627162518) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "board_id"
-    t.integer  "category_id",              null: false
+    t.integer  "category_id"
   end
 
   add_index "comments", ["topic_id"], name: "comments_topic_id_fk", using: :btree
@@ -97,7 +97,7 @@ ActiveRecord::Schema.define(version: 20140627162518) do
     t.datetime "updated_at"
     t.integer  "board_id",                 null: false
     t.integer  "user_id"
-    t.integer  "category_id",              null: false
+    t.integer  "category_id"
     t.string   "image"
   end
 

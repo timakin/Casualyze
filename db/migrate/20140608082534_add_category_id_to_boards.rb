@@ -1,5 +1,5 @@
 class AddCategoryIdToBoards < ActiveRecord::Migration
   def change
-    add_column :boards, :category_id, :integer, :null => false
+    add_column :boards, :category_id, :integer
   end
 end
