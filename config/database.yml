@@ -29,7 +29,11 @@ test:
   socket: /tmp/mysql.sock
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: utf8
+  username: txnoblhelwfcxg
+  password: 7mAvoX0tXCtFsMssfD2xbskmi1
+  host: ec2-107-21-226-77.compute-1.amazonaws.com
+  database: 5432/dai2ssmth2jdch
   pool: 5
   timeout: 5000
