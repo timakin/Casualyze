@@ -1,21 +1,26 @@
 	<div class="container topic-show-title">
 	  <p class="board_title"><%= @topic.title %></p>
 	</div>
+
+
+	<strong>内容</strong>
 	<p>
-	  <strong>Content:</strong>
 	  <%= markdown @topic.content %>
 	</p>	
 
-	<h3></h3>
-	<% @topic.comments.each do |comment| %>
-		<div>
-			<strong><%= comment.name %></strong>
-			</br>
-			<%= comment.body %>
-		</div>
-	<% end %>	
+	<h3>コメント</h3>
+		<% @topic.comments.each do |comment| %>
+			<div>
+				<strong><%= comment.name %></strong>
+				</br>
+				<%= markdown comment.body.to_s %>
+			</div>
+		<% end %>	
+	<p><%= @category.id %></p>
+  <p><%= @board.id %></p>
+  <p><%= @topic.id %></p>
 
 	<%= render 'comments/form' %>	
 
-	<%= link_to 'Edit', edit_category_board_topic_path(@category, @board, @topic) %> |
-	<%= link_to 'Back', category_board_topics_path(@category, @board) %>
+	<%= link_to '編集', edit_category_board_topic_path(@category, @board, @topic) %> |
+	<%= link_to '戻る', category_board_topics_path(@category, @board) %>

@@ -12,6 +12,8 @@ class TopicsController < ApplicationController
   # GET /topics/1
   # GET /topics/1.json
   def show
+    @category = Category.find(params[:category_id])
+    @board = set_board
     @topic = set_topic
 		@comment = @topic.comments.build
 	end
@@ -56,7 +58,7 @@ class TopicsController < ApplicationController
 
     respond_to do |format|
       if @topic.update_attributes(topic_params)
-        format.html { redirect_to [@board, @topic], notice: 'Topic was successfully updated.' }
+        format.html { redirect_to [@category, @board, @topic], notice: 'Topic was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

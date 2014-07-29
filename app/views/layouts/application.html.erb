@@ -13,8 +13,6 @@
         <ul class="sidebar-nav">
           <li class="sidebar-brand"><%= link_to 'NYANDA', root_path, :class => 'navbar-brand' %>
           <% if user_signed_in? %>
-  	        <li><%= image_tag current_user.image.thumb.url, :class => "img-circle user-image" if user_signed_in? %></li>
-    	      <li><a class="user_name"><%= current_user.email[0..8] %></a></li>
       	    <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li> 
       	  <% else %>
       	  	<li><button class="btn-lg btn-primary btn-user-login" data-toggle="modal", data-target = "#myModal">Log in</button></li>
