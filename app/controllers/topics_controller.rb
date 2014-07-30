@@ -4,9 +4,9 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    @category = Category.find(params[:category_id])
-    @board = @category.boards.find(params[:board_id])
-    @topics = @board.topics.all
+      @category = Category.find(params[:category_id])
+      @board = @category.boards.find(params[:board_id])
+      @topics = @board.topics.all
   end
 
   # GET /topics/1
@@ -94,6 +94,6 @@ class TopicsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def topic_params
-      params.require(:topic).permit(:title, :name, :content, :board_id, :category_id, :user_id, :image)
+      params.require(:topic).permit(:title, :name, :content, :board_id, :category_id, :user_id, :image, :tag_list)
     end
 end

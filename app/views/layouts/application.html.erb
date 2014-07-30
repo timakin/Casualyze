@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Nyanda</title>
+  <title>Engyn</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -11,7 +11,7 @@
 		<div class="col-md-2">
 			<div id="sidebar-wrapper">
         <ul class="sidebar-nav">
-          <li class="sidebar-brand"><%= link_to 'NYANDA', root_path, :class => 'navbar-brand' %>
+          <li class="sidebar-brand"><%= link_to 'Engyn', root_path, :class => 'navbar-brand' %>
           <% if user_signed_in? %>
       	    <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li> 
       	  <% else %>
@@ -33,7 +33,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">ログイン</h4>
+            <h4 class="modal-title" id="myModalLabel">Sign in</h4>
           </div>
           <div class="modal-body">
               <%= form_for(:user, :url => session_path(:user)) do |f| %>
@@ -46,7 +46,7 @@
                 <% if devise_mapping.rememberable? -%>
                   <div><%= f.check_box :remember_me, checked: true %></div>
                 <% end -%>
-                <%= f.submit "ログイン", class: "btn btn-primary btn-block" %>
+                <%= f.submit "Sign in", class: "btn btn-primary btn-block" %>
                 <button type="button" class="btn btn-default btn-block" data-dismiss="modal">キャンセル</button>
               <% end %>             
               <%= render "devise/shared/links" %>

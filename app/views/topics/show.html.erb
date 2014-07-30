@@ -4,21 +4,21 @@
 
 
 	<strong>内容</strong>
+	<p>Tags: <%= raw @topic.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
 	<p>
 	  <%= markdown @topic.content %>
 	</p>	
 
 	<h3>コメント</h3>
+	<hr>		
 		<% @topic.comments.each do |comment| %>
 			<div>
 				<strong><%= comment.name %></strong>
 				</br>
 				<%= markdown comment.body.to_s %>
 			</div>
-		<% end %>	
-	<p><%= @category.id %></p>
-  <p><%= @board.id %></p>
-  <p><%= @topic.id %></p>
+		<% end %>
+	
 
 	<%= render 'comments/form' %>	
 

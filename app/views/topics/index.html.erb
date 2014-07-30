@@ -3,14 +3,14 @@
     <div class="col-md-9 col-topic-title">
       <div class="col-md-9 col-topic-title">
         <div class="col-md-7">
-          <p class="board_title"><%= @board.board_name %></p>
+            <p class="board_title"><%= @board.board_name %></p>
         </div>
         <div class="col-md-5">
           <p class="topic-search"><input type="text" class="form-control topic-search" placeholder="Search..."></p>
         </div>
       </div>
       <div class="col-md-3">
-          <button class="btn btn-primary btn-lg btn-create-topic"><%= link_to 'New Topic', new_category_board_topic_path(@category, @board) %> </button>
+          <button class="btn btn-primary btn-create-topic"><%= link_to 'New Topic', new_category_board_topic_path(@category, @board) %></button>
       </div>
     </div>
   </div>
@@ -21,8 +21,7 @@
       <% @topics.each do |t| %>
           <div class="topic">
             <div class="topic_title <%= cycle("odd", "even")%>">
-              <p><%= link_to t.title, category_board_topic_path(@category, @board, t) %><%= Time.now - t.created_at %></p>
-              <p></p>
+                <p><%= link_to t.title, category_board_topic_path(@category, @board, t) %><%= t.created_at.to_formatted_s(:extra_short) %></p>
             </div>
           </div>
       <% end %>

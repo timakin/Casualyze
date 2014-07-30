@@ -25,6 +25,10 @@
     <%= f.file_field :image %>
   </div>
   <div class="field">
+    <%= f.label :tag_list %><br>
+    <%= f.text_field :tag_list %>
+  </div>
+  <div class="field">
     <%= f.hidden_field :board_id, :value => params[:board_id] %>
     <%= f.hidden_field :user_id, :value => current_user %>
     <%= f.hidden_field :category_id, :value => params[:category_id] %>
