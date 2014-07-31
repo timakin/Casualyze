@@ -5,17 +5,15 @@ Nyanda::Application.routes.draw do
 	resources :comments
 	resources :categories, :only => [:create, :destroy] do
 		resources :boards do
-	    resources :topics
+	    resources :topics do
+	    end
 	  end
 	end
+	get 'vote', to: 'votings#vote_to_topic'
 	get 'tags/:tag', to: 'tags#index', as: :tag
 	get "home/index"
-	# The priority is based upon order of creation: first created -> highest priority.
-	# See how all your routes lay out with "rake routes".
-
-	# You can have the root of your site routed with "root"
-	# root 'welcome#index'
 	root :to => "home#index"
+
 	# Example of regular route:
 	#   get 'products/:id' => 'catalog#view'
 

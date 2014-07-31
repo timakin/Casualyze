@@ -5,6 +5,8 @@
 
 	<strong>内容</strong>
 	<p>Tags: <%= raw @topic.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
+	<p>Voted Number: <%= @voted_num %></p>
+	<p>User_id: <%= current_user.id if user_signed_in? %></p>
 	<p>
 	  <%= markdown @topic.content %>
 	</p>	
@@ -18,9 +20,8 @@
 				<%= markdown comment.body.to_s %>
 			</div>
 		<% end %>
-	
 
 	<%= render 'comments/form' %>	
-
+	<%= link_to 'Vote', vote_path(params) %>
 	<%= link_to '編集', edit_category_board_topic_path(@category, @board, @topic) %> |
 	<%= link_to '戻る', category_board_topics_path(@category, @board) %>

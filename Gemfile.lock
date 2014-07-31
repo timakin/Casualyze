@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/activerecord-hackery/polyamorous.git
-  revision: 6bcaa1357f878bbf738298a1d96269356f54db0d
+  revision: d41fc35b4fc396307e2ff2e9b10f3b574fc5fbe4
   specs:
     polyamorous (1.1.0)
       activerecord (>= 3.0)
@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: 9cfc45330e5ad31977b3ac7b2ccc1f8d6146c73f
+  revision: 5953cffdc14b7ccb497ba179eb59d33518dcbbe7
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0)
@@ -31,7 +31,7 @@ GIT
 
 GIT
   remote: git://github.com/justinfrench/formtastic.git
-  revision: ee69d3355bd443d40472147a2d087ed4a5b5af9b
+  revision: d107e18f307f90df60e854c0875d225e330a8854
   specs:
     formtastic (2.3.0.rc3)
       actionpack (>= 3.2.13)
@@ -49,9 +49,9 @@ GIT
 
 GIT
   remote: https://github.com/thomas-mcdonald/bootstrap-sass.git
-  revision: d5625c907168b6311be122b99d89614e02448475
+  revision: 4730db67a8136b87a55180a467dcbaefc73c3026
   specs:
-    bootstrap-sass (3.2.0.0)
+    bootstrap-sass (3.2.0.1)
       sass (~> 3.2)
 
 GEM
@@ -163,13 +163,13 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    meta_request (0.3.3)
+    meta_request (0.3.4)
       callsite (~> 0.0, >= 0.0.11)
       rack-contrib (~> 1.1)
       railties (>= 3.0.0, < 5.0.0)
     method_source (0.8.2)
     mime-types (1.25.1)
-    mini_magick (3.7.0)
+    mini_magick (3.8.0)
       subexec (~> 0.2.1)
     mini_portile (0.6.0)
     minitest (4.7.5)
@@ -270,14 +270,14 @@ GEM
     responders (1.0.0)
       railties (>= 3.2, < 5)
     rmagick (2.13.2)
-    rspec-core (3.0.2)
+    rspec-core (3.0.3)
       rspec-support (~> 3.0.0)
-    rspec-expectations (3.0.2)
+    rspec-expectations (3.0.3)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.0.0)
-    rspec-mocks (3.0.2)
+    rspec-mocks (3.0.3)
       rspec-support (~> 3.0.0)
-    rspec-rails (3.0.1)
+    rspec-rails (3.0.2)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
@@ -285,7 +285,7 @@ GEM
       rspec-expectations (~> 3.0.0)
       rspec-mocks (~> 3.0.0)
       rspec-support (~> 3.0.0)
-    rspec-support (3.0.2)
+    rspec-support (3.0.3)
     ruby-graphviz (1.0.9)
     sass (3.2.19)
     sass-rails (4.0.3)

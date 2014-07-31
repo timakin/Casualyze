@@ -4,9 +4,9 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-      @category = Category.find(params[:category_id])
-      @board = @category.boards.find(params[:board_id])
-      @topics = @board.topics.all
+    @category = Category.find(params[:category_id])
+    @board = @category.boards.find(params[:board_id])
+    @topics = @board.topics.all
   end
 
   # GET /topics/1
@@ -16,7 +16,9 @@ class TopicsController < ApplicationController
     @board = set_board
     @topic = set_topic
 		@comment = @topic.comments.build
-	end
+    @vote = Voting.find_all_by_topic_id(params[:id])
+    @voted_num = @vote.size
+  end
 
   # GET /topics/new
   def new
