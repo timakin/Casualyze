@@ -102,6 +102,10 @@ gem 'mime-types'
 gem 'mini_magick'
 gem 'rmagick', require: false
 
+# AccessCount
+gem 'ahoy_matey'
+gem 'activeuuid', '>= 0.5.0'
+
 # デフォルトのgem
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
