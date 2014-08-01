@@ -1,5 +1,6 @@
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
+  after_action  :add_visit_count, only: :show
 
   # GET /topics
   # GET /topics.json
@@ -18,6 +19,7 @@ class TopicsController < ApplicationController
 		@comment = @topic.comments.build
     @vote = Voting.find_all_by_topic_id(params[:id])
     @voted_num = @vote.size
+    @count_of_access = access_num_of_topic
   end
 
   # GET /topics/new
@@ -38,7 +40,8 @@ class TopicsController < ApplicationController
     @board = set_board
     @topic = @board.topics.new(topic_params)
     @topic.category_id = params[:category_id]
-    @topic.user_id = current_user
+    @topic.user_id = current_user.id
+#    @topic.visit_id = ahoy.visit_id
 #    @topic = Topic.new(topic_params)
 
     respond_to do |format|
@@ -81,6 +84,12 @@ class TopicsController < ApplicationController
     end
   end
 
+  def add_visit_count
+    @visit = ahoy.visit_id
+    @topic = set_topic
+    TopicVisit.where(topic_id: @topic, visit_id: @visit).first_or_create
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_topic
@@ -94,8 +103,13 @@ class TopicsController < ApplicationController
       @board = @category.boards.find(params[:board_id])
     end
 
+    def access_num_of_topic
+      @topic = set_topic
+      TopicVisit.where(topic_id: @topic.id).size
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def topic_params
-      params.require(:topic).permit(:title, :name, :content, :board_id, :category_id, :user_id, :image, :tag_list)
+      params.require(:topic).permit(:title, :name, :content, :board_id, :category_id, :user_id, :image, :tag_list, :visit_id)
     end
 end
