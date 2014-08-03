@@ -7,7 +7,8 @@ class Topic < ActiveRecord::Base
 	belongs_to :board
 
 	# validattion
-	validates :title, :content, :category_id, :board_id, presence: true
+	validates :title, :content, presence: true
+	validates :category_id, :board_id, presence: true, uniqueness: true
 
 	# image uploader
 	mount_uploader :image, ImageUploader
@@ -15,7 +16,4 @@ class Topic < ActiveRecord::Base
 	# tagging
 	acts_as_taggable
 	acts_as_taggable_on :tag_list
-
-	# Ahoy Access Analysis Setting
-	#visitable
 end

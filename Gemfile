@@ -37,7 +37,7 @@ group :assets do
 end
 
 
-group :development do
+group :development, :test do
   # コンソール画面を綺麗にする
   gem "rails-erd"
   gem 'hirb'
@@ -51,6 +51,25 @@ group :development do
   gem 'better_errors'
   gem 'meta_request'
   gem 'rails_config'
+
+  # Test Environment
+  gem 'rspec'
+  gem 'minitest'
+  gem 'capybara'
+  gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'factory_girl_rails'
+  gem 'rb-readline' # Mac だといれとかないとコンソールが変なことになる。
+  gem 'spork'
+
+  # Guard
+  gem 'guard'
+  gem 'guard-spork'
+  gem 'guard-rspec'
+
+  # Notify
+  gem 'growl', require: false # for Mac
+  gem 'libnotify', require: false # for *nix
 end
 
 gem 'dropzonejs-rails'
@@ -71,7 +90,6 @@ gem 'acts_as_commentable'
 
 # タグ機能
 gem 'acts-as-taggable-on'
-gem 'rspec-rails'
 
 # 権限管理
 gem 'cancan'
@@ -114,6 +132,8 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+gem "therubyracer"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
