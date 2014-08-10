@@ -9,11 +9,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) do |u|
       u.permit(:name, :heard_how,
-        :email, :password, :password_confirmation, :image)
+        :email, :password, :password_confirmation, :image, :avatar)
     end
     devise_parameter_sanitizer.for(:account_update) do |u|
       u.permit(:name,
-        :email, :password, :password_confirmation, :current_password, :image)
+        :email, :password, :password_confirmation, :current_password, :image, :avatar)
     end
   end
  

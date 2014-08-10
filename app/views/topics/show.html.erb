@@ -1,7 +1,9 @@
 	<div class="container topic-show-title">
 	  <p class="board_title"><%= @topic.title %></p>
 	</div>
-
+	<p><%= image_tag(@topic.clip.url(:medium)) %></p>
+	<p><%= image_tag(@topic.image_url) if @topic.image_url.present? %></p>
+	<p><%= puts @topic.title %></p>
 
 	<strong>内容</strong>
 	<p>Tags: <%= raw @topic.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
@@ -12,6 +14,11 @@
 	<p>
 	  <%= markdown @topic.content %>
 	</p>	
+	<p>=================================</p>
+	<p>Image URL: <%= @topic.image_url %></p>
+	<p>Image in /apps/assets:<%= image_tag('20080105_0_____1.jpg') %></p>
+
+
 
 	<h3>コメント</h3>
 	<hr>		

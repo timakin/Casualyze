@@ -3,6 +3,7 @@ class CreateTopics < ActiveRecord::Migration
     create_table :topics do |t|
       t.string :title, :null => false, :default => ""
       t.text :content, :null => false
+      t.attachment :clip
 
       t.timestamps
     end

@@ -21,9 +21,9 @@
   <%= f.password_field :current_password %></div>
 
     <div>
-    <%= image_tag current_user.image.url %>
-    <%= f.label :image %><br />
-    <%= f.file_field :image %>
+    <%= image_tag current_user.avatar.url %>
+    <%= f.label :avatar %><br />
+    <%= f.file_field :avatar %>
   </div>
 
   <div><%= f.submit "Update" %></div>

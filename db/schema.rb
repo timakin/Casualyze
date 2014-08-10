@@ -112,11 +112,15 @@ ActiveRecord::Schema.define(version: 20140801111937) do
   end
 
   create_table "topics", force: true do |t|
-    t.string   "title",       default: "", null: false
-    t.text     "content",                  null: false
+    t.string   "title",             default: "", null: false
+    t.text     "content",                        null: false
+    t.string   "clip_file_name"
+    t.string   "clip_content_type"
+    t.integer  "clip_file_size"
+    t.datetime "clip_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "board_id",                 null: false
+    t.integer  "board_id",                       null: false
     t.integer  "user_id"
     t.integer  "category_id"
     t.string   "image"
@@ -125,6 +129,10 @@ ActiveRecord::Schema.define(version: 20140801111937) do
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

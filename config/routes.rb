@@ -1,5 +1,8 @@
 Nyanda::Application.routes.draw do
 	devise_for :users, :controllers => {:registrations => "users/registrations"}
+	devise_scope :users do
+		get 'me', to: 'users/registrations#edit'
+	end
 	devise_for :admin_users, ActiveAdmin::Devise.config
 	ActiveAdmin.routes(self)
 	resources :comments

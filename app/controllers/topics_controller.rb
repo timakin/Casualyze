@@ -1,5 +1,6 @@
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:edit, :new, :update, :destroy, :create]
   after_action  :add_visit_count, only: :show
 
   # GET /topics
@@ -110,6 +111,6 @@ class TopicsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def topic_params
-      params.require(:topic).permit(:title, :name, :content, :board_id, :category_id, :user_id, :image, :tag_list, :visit_id)
+      params.require(:topic).permit(:title, :name, :content, :board_id, :category_id, :user_id, :image, :tag_list, :visit_id, :clip)
     end
 end

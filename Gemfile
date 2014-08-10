@@ -42,6 +42,7 @@ group :development, :test do
   gem "rails-erd"
   gem 'hirb'
   gem 'hirb-unicode'
+  gem 'pry', '< 0.10.0'
   gem 'pry-rails'
   gem 'binding_of_caller'
   
@@ -70,11 +71,12 @@ group :development, :test do
   # Notify
   gem 'growl', require: false # for Mac
   gem 'libnotify', require: false # for *nix
+
+  gem 'web-console'
 end
 
 gem 'dropzonejs-rails'
 gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'
-
 
 # 会員登録用
 gem 'devise'
@@ -118,7 +120,9 @@ gem "formtastic", github: "justinfrench/formtastic"
 gem 'carrierwave'
 gem 'mime-types'
 gem 'mini_magick'
-gem 'rmagick', require: false
+gem 'rmagick', require: 'RMagick'
+gem 'rails_12factor'
+gem 'paperclip'
 
 # AccessCount
 gem 'ahoy_matey'

@@ -8,10 +8,11 @@ class Topic < ActiveRecord::Base
 
 	# validattion
 	validates :title, :content, presence: true
-	validates :category_id, :board_id, presence: true, uniqueness: true
+	validates :category_id, :board_id, presence: true
 
 	# image uploader
 	mount_uploader :image, ImageUploader
+	has_attached_file :clip, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 
 	# tagging
 	acts_as_taggable
