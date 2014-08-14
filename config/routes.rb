@@ -1,13 +1,23 @@
 Nyanda::Application.routes.draw do
-	devise_for :users, :controllers => {:registrations => "users/registrations"}
-	devise_scope :users do
-		get 'me', to: 'users/registrations#edit'
+	devise_for :users, :controllers => {:registrations => "users/registrations"}, skip: [:sessions, :registrations]
+	devise_scope :user do
+		get '/in', to: 'devise/sessions#new', as: :new_user_session
+		post '/in', to: 'devise/sessions#create', as: :user_session
+		delete '/out', to: 'devise/sessions#destroy', as: :destroy_user_session
+
+		# users/registrations paths
+		post '/joinus', to: 'users/registrations#create', as: :user_registration
+		get '/joinus', to: 'users/registrations#new', as: :new_user_registration
+		get '/me', to: 'users/registrations#edit', as: :edit_user_registration
+		patch '/me', to: 'users/registrations#update', as: nil
+		put '/me', to: 'users/registrations#update', as: nil
+		delete '/me', to: 'users/registrations#destroy', as: nil
 	end
-	devise_for :admin_users, ActiveAdmin::Devise.config
-	ActiveAdmin.routes(self)
+#	devise_for :admin_users, ActiveAdmin::Devise.config
+#	ActiveAdmin.routes(self)
 	resources :comments
 	resources :categories, :only => [:create, :destroy] do
-		resources :boards do
+		resources :boards, :only => [:index] do
 	    resources :topics do
 	    end
 	  end
