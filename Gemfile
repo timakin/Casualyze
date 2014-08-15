@@ -60,7 +60,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'guard-rspec'
   gem 'factory_girl_rails'
-  gem 'rb-readline' # Mac だといれとかないとコンソールが変なことになる。
   gem 'spork'
 
   # Guard

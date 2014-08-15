@@ -16,9 +16,9 @@ Nyanda::Application.routes.draw do
 #	devise_for :admin_users, ActiveAdmin::Devise.config
 #	ActiveAdmin.routes(self)
 	resources :comments
-	resources :categories, :only => [:create, :destroy] do
-		resources :boards, :only => [:index] do
-	    resources :topics do
+	resources :categories, :only => [:create, :destroy], :path => '/g' do
+		resources :boards, :only => [:index], :path => '' do
+	    resources :topics, :path => '' do
 	    end
 	  end
 	end

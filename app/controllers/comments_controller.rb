@@ -7,8 +7,8 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @category = Category.find(params[:comment][:category_id])
-    @board    = @category.boards.find(params[:comment][:board_id])
+    @category = Category.friendly.find(params[:comment][:category_id])
+    @board    = @category.boards.friendly.find(params[:comment][:board_id])
     @topic    = @board.topics.find(params[:comment][:topic_id])
     @comment  = @topic.comments.new(comment_params)
 

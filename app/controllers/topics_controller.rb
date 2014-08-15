@@ -6,15 +6,15 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    @category = Category.find(params[:category_id])
-    @board = @category.boards.find(params[:board_id])
+    @category = Category.friendly.find(params[:category_id])
+    @board = @category.boards.friendly.find(params[:board_id])
     @topics = @board.topics.all
   end
 
   # GET /topics/1
   # GET /topics/1.json
   def show
-    @category = Category.find(params[:category_id])
+    @category = Category.friendly.find(params[:category_id])
     @board = set_board
     @topic = set_topic
 		@comment = @topic.comments.build
@@ -31,6 +31,7 @@ class TopicsController < ApplicationController
 
   # GET /topics/1/edit
   def edit
+    @category = Category.friendly.find(params[:category_id])
     @board = set_board
     @topic = @board.topics.find(params[:id])
   end
@@ -38,12 +39,11 @@ class TopicsController < ApplicationController
   # POST /topics
   # POST /topics.json
   def create
+    @category = Category.friendly.find(params[:category_id])
     @board = set_board
     @topic = @board.topics.new(topic_params)
-    @topic.category_id = params[:category_id]
+    @topic.category_id = @category.id
     @topic.user_id = current_user.id
-#    @topic.visit_id = ahoy.visit_id
-#    @topic = Topic.new(topic_params)
 
     respond_to do |format|
       if @topic.save
@@ -59,8 +59,12 @@ class TopicsController < ApplicationController
   # PATCH/PUT /topics/1
   # PATCH/PUT /topics/1.json
   def update
-    @board = set_board
-    @topic = @board.topics.find(params[:id])
+#    @category = Category.friendly.find(params[:category_id])
+#    @board = set_board
+#    @topic = @board.topics.find(params[:id])
+#    @Topic.user_id = current_user.id
+#    @topic.category_id = @category.id
+#    @topic.board_id = @board.id
 
     respond_to do |format|
       if @topic.update_attributes(topic_params)
@@ -94,14 +98,14 @@ class TopicsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_topic
-      @category = Category.find(params[:category_id])
-      @board    = @category.boards.find(params[:board_id])
+      @category = Category.friendly.find(params[:category_id])
+      @board    = @category.boards.friendly.find(params[:board_id])
       @topic = @board.topics.find(params[:id])
     end
 
     def set_board
-      @category = Category.find(params[:category_id])
-      @board = @category.boards.find(params[:board_id])
+      @category = Category.friendly.find(params[:category_id])
+      @board = @category.boards.friendly.find(params[:board_id])
     end
 
     def access_num_of_topic

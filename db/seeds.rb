@@ -7,10 +7,10 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # Category_params
-Category.create(name: 'Language')
-Category.create(name: 'Devise')
-Category.create(name: 'Web')
-Category.create(name: 'Engineer')
+Category.create(name: 'la')
+Category.create(name: 'de')
+Category.create(name: 'web')
+Category.create(name: 'en')
 
 # Boards_params
 Board.create(board_name: 'Ruby', category_id: 1)

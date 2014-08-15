@@ -11,21 +11,21 @@ class BoardsController < ApplicationController
   # GET /boards/1
   # GET /boards/1.json
   def show
-    @category = Category.find(params[:category_id])
-    @boards = @category.boards.find(params[:id])
+    @category = Category.friendly.find(params[:category_id])
+    @boards = @category.boards.friendly.find(params[:id])
   end
 
   # GET /boards/new
   def new
-    @category = Category.find(params[:category_id])
-    @board = @category.boards.new
+    @category = Category.friendly.find(params[:category_id])
+    @board = @category.boards.friendly.new
   end
 
   # POST /boards
   # POST /boards.json
   def create
-    @category = Category.find(params[:category_id])
-    @board = @category.boards.new(board_params)
+    @category = Category.friendly.find(params[:category_id])
+    @board = @category.boards.friendly.new(board_params)
 
     respond_to do |format|
       if @board.save
@@ -41,9 +41,9 @@ class BoardsController < ApplicationController
   # PATCH/PUT /boards/1
   # PATCH/PUT /boards/1.json
   def update
-    @category = Category.find(params[:category_id])
+    @category = Category.friendly.find(params[:category_id])
     respond_to do |format|
-      if @category.boards.update(board_params)
+      if @category.boards.friendly.update(board_params)
         format.html { redirect_to [@category, @board], notice: 'Board was successfully updated.' }
         format.json { head :no_content }
       else
@@ -56,8 +56,8 @@ class BoardsController < ApplicationController
   # DELETE /boards/1
   # DELETE /boards/1.json
   def destroy
-    @category = Category.find(params[:category_id])
-    @board = @category.boards.find(params[:id])
+    @category = Category.friendly.find(params[:category_id])
+    @board = @category.boards.friendly.find(params[:id])
     @board.destroy
     respond_to do |format|
       format.html { redirect_to category_boards_url(@category) }
@@ -69,7 +69,7 @@ class BoardsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_board
       @category = Category.find(params[:category_id])
-      @board = @category.boards.find(params[:id])
+      @board = @category.boards.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

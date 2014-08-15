@@ -17,8 +17,8 @@
       	  <% else %>
       	  	<li><button class="btn-lg btn-primary btn-user-login" data-toggle="modal", data-target = "#myModal">Log in</button></li>
           <% end %>
-          <% for board in Board.all %>
-            <li class="board-list"><%= link_to board.board_name, category_board_topics_path(board.category_id, board), :class => "board-name" %></li>
+          <% for board in Board.friendly.all %>
+            <li class="board-list"><%= link_to board.board_name, category_board_topics_path(Category.find_by_id(board.category_id).name, board), :class => "board-name" %></li>
           <% end %>
         </ul>
       </div>

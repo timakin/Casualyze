@@ -18,7 +18,7 @@
 			<% @topics.each do |t| %>
 					<div class="topic">
 						<div class="topic_title <%= cycle("odd", "even") %>">
-							<p><%= link_to t.title, category_board_topic_path(t.category_id, t.board_id, t.id) %></p>
+							<p><%= link_to t.title, category_board_topic_path(Category.find_by_id(t.category_id).name, t.board, t) %></p>
 						</div>
 					</div>
 			<% end %>

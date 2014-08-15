@@ -9,14 +9,10 @@
 	<p>Tags: <%= raw @topic.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
 	<p>Voted Number: <%= @voted_num %></p>
 	<p>User_id: <%= current_user.id if user_signed_in? %></p>
-	<p>Visit: <%= ahoy.visit_id %></p>
 	<p>Access_num: <%= @count_of_access %></p>
 	<p>
 	  <%= markdown @topic.content %>
 	</p>	
-	<p>=================================</p>
-	<p>Image URL: <%= @topic.image_url %></p>
-	<p>Image in /apps/assets:<%= image_tag('20080105_0_____1.jpg') %></p>
 
 
 
