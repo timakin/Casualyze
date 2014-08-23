@@ -61,6 +61,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'factory_girl_rails'
   gem 'spork'
+  gem 'shoulda-matchers', require: false
 
   # Guard
   gem 'guard'
@@ -113,7 +114,7 @@ gem "nokogiri"
 # 管理画面用
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem "polyamorous", :github => "activerecord-hackery/polyamorous"
-gem "formtastic", github: "justinfrench/formtastic"
+#gem "formtastic", github: "justinfrench/formtastic"
 
 # 写真アップロード機能
 gem 'carrierwave'

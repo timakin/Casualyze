@@ -122,9 +122,9 @@ ActiveRecord::Schema.define(version: 20140814151424) do
     t.datetime "clip_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "board_id",                       null: false
+    t.integer  "board_id",          default: 0,  null: false
     t.integer  "user_id"
-    t.integer  "category_id"
+    t.integer  "category_id",       default: 0,  null: false
     t.string   "image"
   end
 
