@@ -1,5 +1,15 @@
-	<div class="container topic-show-title">
-	  <p class="board_title"><%= @topic.title %></p>
+	<div class="container container-fluid">
+		<div class="row">
+			<div class="col-md-12 col-topic-title">
+				<span class="posteby-name">Posted by <%= @topic.user.email %></span>
+				<span class="access-count"><%= @count_of_access %> views</span>
+
+				<h1 class="topic_title"><%= @topic.title %></h1>
+			</div>
+			<div class="col-md-12 col-topic-desc-bottom-line">
+				<div class="col-topic-desc"><p class="topic-desc"><%= markdown @topic.content %></p></div>
+			</div>
+		</div>
 	</div>
 	<p><%= image_tag(@topic.clip.url(:medium)) %></p>
 	<p><%= image_tag(@topic.image_url) if @topic.image_url.present? %></p>
@@ -9,15 +19,10 @@
 	<p>Tags: <%= raw @topic.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
 	<p>Voted Number: <%= @voted_num %></p>
 	<p>User_id: <%= current_user.id if user_signed_in? %></p>
-	<p>Access_num: <%= @count_of_access %></p>
-	<p>
-	  <%= markdown @topic.content %>
-	</p>	
 
 
 
-	<h3>コメント</h3>
-	<hr>		
+	<h3>コメント</h3>	
 		<% @topic.comments.each do |comment| %>
 			<div>
 				<strong><%= comment.name %></strong>

@@ -1,3 +1,134 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home-input {
+	width: 60%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.home-input-form{
+	color: #fff;
+	background: transparent;
+	border: 2px solid #fff;
+	height: 45px;
+	font-size: 18px;
+}
+.home-input-form:focus{
+	background: transparent;
+	border: 2px solid #fff;
+	box-shadow: none;
+	height: 45px;
+	font-size: 18px;
+}
+input.home-input-form::-webkit-input-placeholder { color: #fff; }
+input.home-input-form:-moz-placeholder { color: #fff; }
+
+
+
+.input-group-btn:last-child > .home-input-btn {
+	border: 2px solid #fff;
+	height: 45px;
+	font-size: 18px;
+	color: #fff;
+	background-color: transparent;
+	margin-left: -2px;
+}
+.home-input-btn:hover {
+	border: 2px solid #fff;
+	height: 45px;
+	font-size: 18px;
+	color: #fff;
+	border-color: none;
+	background-color: transparent;
+}
+.home-input-btn:active {
+	border: 2px solid #fff;
+	height: 45px;
+	font-size: 18px;
+	color: #fff;
+	border-color: none;
+	background-color: transparent;
+}
+.home-input-btn:focus {
+	border: 2px solid #fff;
+	height: 45px;
+	font-size: 18px;
+	color: #fff;
+	border-color: none;
+	background-color: transparent;
+}
+
+
+.home-jumbotron {
+	background: #4FC3F7;
+}
+
+.jumbotron-title-home {
+	font-family: Gotham;
+	font-weight: bold;
+	text-align: center;
+}
+
+.jumbotron-title-desc-home {
+	font-family: Lato;
+	font-weight: bold;
+	text-align: center;
+
+}
+
+.btn-home-category-list {
+	border-radius: 0px;
+}
+
+
+.list-group-item-home {
+	font-family: Lato;
+	color: #fff;
+	background-color: #344345;
+	border: 1px solid #333;
+	a {
+		color: white;
+	}
+}
+
+.list-group-item-badge {
+	background-color: #f53a2c;
+	border-radius: 4px;
+}
+
+.list-group-title-home {
+	font-family: Gotham;
+	font-weight: bold;
+}
+
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@media only screen and (max-width: 640px) {
+	.home-input {
+		width: 100%;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}

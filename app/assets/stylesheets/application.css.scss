@@ -88,17 +88,6 @@ a {
 	font-family: Gotham;
 }
 
-.sidemenu {
-	float: left;
-	width: 150px;
-	overflow: scroll;
-	background-color: black;
-  
-  .sidemenu_list{
-    list-style: none;
-    color: white;
-  }
-}
 
 .login_modal {
 	cursor: pointer;
@@ -108,26 +97,21 @@ a {
 	float: left;	
 }
 
-.container-top {
-	padding-top: 15px;
-	padding-bottom: 300px;
-}
-
-.container-main {
-	background-color: #FFFFFF;
-}
 
 .highlight {
   font-family: Consolas,"Liberation Mono",Courier,monospace;
-  font-size: 12px;
   line-height: 1.4;
   padding: 12px;
-  padding-right: 0;
   margin-bottom: 16px;
   border: solid 2px #eee;
   border-radius: 2px;
   background-color: #fafafa;
   overflow: scroll;
+
+  pre {
+    font-size: 12px;
+    margin: 0px;
+  }
 
   .hll { background-color: #ffffcc }
   .c { color: #999988; font-style: italic } /* Comment */
@@ -190,4 +174,8 @@ a {
   .vg { color: #008080 } /* Name.Variable.Global */
   .vi { color: #008080 } /* Name.Variable.Instance */
   .il { color: #009999 } /* Literal.Number.Integer.Long */
+}
+
+.main {
+  margin-top: 60px;
 }
