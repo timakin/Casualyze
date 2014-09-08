@@ -36,16 +36,28 @@
 }
 
 .col-topic-title {
-	padding: 0px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	border-bottom: 1px solid #a6aebb;
 }
 
-p.board_title {
-	font-family: Lato-Light;
-	color: #98979A;
-	font-size: 46px;
-	float: left;
-	margin-left:auto;
-	margin-right: auto;
+h1.topic_title {
+	font-family: Gotham;
+	color: #999999;
+	text-align: center;
+}
+.access-count {
+	float: right;
+	color: #999999;
+}
+.posteby-name {
+	color: #999999;
+}
+
+hr.under-topic-title-line {
+	margin-top: 40px;
+	border: 1px solid #a6aebb;
+	width: 80%;
 }
 
 
@@ -60,6 +72,23 @@ input.topic-search {
 	border: 2px solid #CECECE;
 	color: #CECECE;
 	letter-spacing: 1.5px;
+}
+
+.col-topic-desc {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	width: 90%;
+	margin: 0 auto; 
+
+}
+.col-topic-desc-bottom-line {
+	border-bottom: 1px solid #a6aebb;
+}
+p.topic-desc {
+	font-family: Lato;
+	color: black;
+	font-size: 18px;
+
 }
 
 input.topic-search:focus {

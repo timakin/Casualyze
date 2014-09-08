@@ -21,93 +21,47 @@ button:hover
   /*  -webkit-appearance:none; */
 }
 
+.container {
+	width: 60%;
+}
 
 
 a, a:link {
 	text-decoration: none;
 }
+
 a.navbar-brand {
 	height: 60px;
 	line-height: 35px;
-	text-align: center;
-}
-.navbar-nav {
-	li > a.login_modal {
-		height: 60px;
-		line-height: 35px;
-		font-weight: bold;
-		letter-spacing: 2px;
-	}
-	li.dropdown {
-		a {
-			font-weight: bold;
-			letter-spacing: 2px;
-		}
-		a:hover {
-			color: #f2706c;
-		}
-	}
 }
 
-.navbar-right {
-	li.dropdown.open a.user-toggle:focus {
-		color: #777777;
-		background-color: white;
-		}
-	.user-toggle {
-		a.dropdown-toggle:focus {
-			color: #777777;
-		}
-	}
-	li.dropdown a:hover {
-		color: #777777;	
-	}
-	li.dropdown.open a.category-toggle:focus {
+.navbar {
+	border: none;
+}
+
+.navbar-default {
+	.navbar-brand {
 		color: white;
-		background-color: white;
 	}
-	li.dropdown > a.dropdown-toggle:hover {
-			border-bottom: none;
+	.navbar-brand:hover {
+		color: white;
+	}
+	.navbar-nav {
+		li {
+			a {
+				color: #fff;
+				line-height: 35px;
+				height: 60px;
+			}
+			a:hover {
+				color: #fff;
+			}
+		}
 	}
 }
 
 .navbar-custom {
-	background: #fff;
-	box-shadow: 0 4px 0 rgba(0, 0, 0, 0.05);
-}
-
-li.dropdown {
-	a.dropdown-toggle {
-			height: 60px;
-			line-height: 35px;
-			text-align: center;
-			vertical-align: middle;
-			img.user_image {
-				margin-top: -6px;
-				border: none;
-			}
-	}
-	a.dropdown-toggle:hover {
-			border-bottom: 4px solid #f2706c;
-			transition: all 0.25s ease-in-out;
-	}
-}
-
-li.dropdown.open {
-	a.dropdown-toggle:focus {
-		color: white;
-		background-color: #f2706c;
-	}
-}
-.dropdown-menu > li {
-	a:hover {
-		background: white;
-	}
-}
-
-li.dropdown_menu_list {
-	padding-top: 10px;
-	padding-bottom: 10px;
+	background: #344345;
 }
 
 
@@ -127,11 +81,9 @@ li.dropdown_menu_list {
 	Login settings
 */
 a.login_modal {
-	text-align: center;
+
 }
 a.login_modal:hover {
-	border-bottom: 4px solid #f2706c;
-	transition: all 0.25s ease-in-out;	
 }
 
 .login_form {
@@ -147,7 +99,8 @@ a.login_modal:hover {
 	outline: 0;
 }
 
-@media (min-width: 768px){
+
+@media only screen and (max-width: 640px) {
 	.container {
 		width: 100%;
 	}

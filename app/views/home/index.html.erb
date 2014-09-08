@@ -1,28 +1,100 @@
-<div class="container container-top">
-	<div class="row">
-    <div class="col-topic-title">
-      <div class="col-md-9 col-topic-title">
-        <div class="col-md-7">
-          <p class="board_title">All</p>
-        </div>
-        <div class="col-md-5">
-        </div>
-      </div>
-      <div class="col-md-3">
-          <p class="topic-search"><input type="text" class="form-control topic-search" placeholder="Search..."></p>
-      </div>
-    </div>
+<div class="jumbotron home-jumbotron">
+  <div class="container">
+  	<h1 class="jumbotron-title-home"> </h1>
+  	<p class="jumbotron-title-desc-home">Modern Scheme for Hacker's Topic Sharing</p>
+  	<br>
+    <div class="input-group home-input">
+		  <input type="text" class="form-control home-input-form" placeholder="Type in topic title">
+		  <div class="input-group-btn">
+		  	<button type="button" class="btn btn-default home-input-btn">Go</button>
+		  </div>
+		</div>
+
   </div>
+</div>
+<div class="container">
 	<div class="row">
-		<div>
-			<% @topics.each do |t| %>
-					<div class="topic">
-						<div class="topic_title <%= cycle("odd", "even") %>">
-							<p><%= link_to t.title, category_board_topic_path(Category.find_by_id(t.category_id).name, t.board, t) %></p>
-						</div>
-					</div>
+		<div class="col-md-12">
+			<% @boards.each_slice(4) do |boards| %>
+				<div class="btn-group btn-group-justified">
+					<% boards.each do |t| %>
+					  <div class="btn-group">
+					    <button type="button" class="btn btn-default btn-home-category-list">
+					    	<%= link_to t.board_name, category_board_topics_path(t.category_id, t.id) %>
+					    </button>
+					  </div>
+				  <% end %>
+			  </div>
 			<% end %>
-			<%= render "devise/shared/links" %>
 		</div>
 	</div>
 </div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-sm-12">
+			<h2 class="list-group-title-home">Popular</h2>
+			<ul class="list-group">
+				<% @popular_topics.each do |t| %>
+					<li class="list-group-item list-group-item-home">
+						<%= link_to t.title, category_board_topic_path(Category.find(t.category_id), Board.find(t.board_id), t.id), class: 'list-group-item-title-pop' %>
+						<span class="badge list-group-item-badge pull-right"><%= TopicVisit.where(topic_id: t.id).size %></span>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+		<div class="col-md-6 col-sm-12">
+			<h2 class="list-group-title-home">Latest</h2>			
+			<ul class="list-group">
+				<% @latest_topics.each do |t| %>
+					<li class="list-group-item list-group-item-home">
+						<%= link_to t.title, category_board_topic_path(Category.find(t.category_id), Board.find(t.board_id), t.id), class: 'list-group-item-title-latest' %>
+						<span class="pull-right">1 days ago</span>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+<script>
+  $(function(){
+      $(".jumbotron-title-home").typed({
+        strings: ["Casualyze"],
+        typeSpeed: 200
+      });
+  });
+
+  $(function(){
+	var $setElm = $('ul li a.list-group-item-title-pop');
+	var cutFigure = '40'; // カットする文字数
+	var afterTxt = ' …'; // 文字カット後に表示するテキスト
+
+	$setElm.each(function(){
+		var textLength = $(this).text().length;
+		var textTrim = $(this).text().substr(0,(cutFigure))
+
+		if(cutFigure < textLength) {
+			$(this).html(textTrim + afterTxt).css({visibility:'visible'});
+		} else if(cutFigure >= textLength) {
+			$(this).css({visibility:'visible'});
+		}
+	});
+});
+    $(function(){
+	var $setElm = $('ul li a.list-group-item-title-latest');
+	var cutFigure = '25'; // カットする文字数
+	var afterTxt = ' …'; // 文字カット後に表示するテキスト
+
+	$setElm.each(function(){
+		var textLength = $(this).text().length;
+		var textTrim = $(this).text().substr(0,(cutFigure))
+
+		if(cutFigure < textLength) {
+			$(this).html(textTrim + afterTxt).css({visibility:'visible'});
+		} else if(cutFigure >= textLength) {
+			$(this).css({visibility:'visible'});
+		}
+	});
+});
+</script>

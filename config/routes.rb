@@ -3,7 +3,7 @@ Nyanda::Application.routes.draw do
 	devise_scope :user do
 		get '/in', to: 'devise/sessions#new', as: :new_user_session
 		post '/in', to: 'devise/sessions#create', as: :user_session
-		delete '/out', to: 'devise/sessions#destroy', as: :destroy_user_session
+		get '/out', to: 'devise/sessions#destroy', as: :destroy_user_session
 
 		# users/registrations paths
 		post '/joinus', to: 'users/registrations#create', as: :user_registration
