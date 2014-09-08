@@ -3,10 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+div.board_title {
+	padding-top: 40px;
+	padding-bottom: 30px;
+}
+p.board_title {
+	text-align: center;
+	font-weight: bold;
+	font-family: Gotham;
+	font-size: 48px;
+}
 .topic {
 	.topic_title {
-		border-radius: 3px;
-		padding: 10px;
 		font-weight: bold;
 		p { 
 			margin: 0px;
@@ -23,10 +31,6 @@
 			color: #6A6A6A;
 		}
 	}
-	.topic_title:hover {
-		border-left: 6px solid orange;
-		margin-left: -6px;
-	}
 	.odd {
 		background-color: #F6F6F6;
 	}
@@ -38,7 +42,7 @@
 .col-topic-title {
 	padding-top: 40px;
 	padding-bottom: 40px;
-	border-bottom: 1px solid #a6aebb;
+	border-bottom: 1px solid #B9B9B9;
 }
 
 h1.topic_title {
@@ -99,14 +103,17 @@ input.topic-search:focus {
 }
 
 button.btn-create-topic {
-	background-color: #f2706c;
-	border: 1px solid #f2706c;
+	background-color: #5bc0de;
+	border: 1px solid #5bc0de;
 	border-radius: 0px;
-	margin-top: 2px;
+	margin-bottom: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	width: 100%;
 	letter-spacing: 1.5px;
 	a {
 		color: white;
+		font-size: 18px;
 	}
 	a:hover {
 		text-decoration: none;
@@ -117,14 +124,14 @@ button.btn-create-topic {
 }
 
 button.btn-create-topic:hover {
-	background-color: #f2706c;
-	border: 1px solid #f2706c;
+	background-color: #30B1D8;
+	border: 1px solid #30B1D8;
 	border-radius: 0px;
 }
 
 button.btn-create-topic:focus {
-	background-color: #f2706c;
-	border: 1px solid #f2706c;
+	background-color: #30B1D8;
+	border: 1px solid #30B1D8;
 	border-radius: 0px;
 }
 

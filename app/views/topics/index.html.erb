@@ -1,38 +1,27 @@
 <div class="container container-top container-main">
   <div class="row">
-    <div class="col-md-9 col-topic-title">
-      <div class="col-md-9 col-topic-title">
-        <div class="col-md-7">
+        <div class="col-md-12 board_title">
             <p class="board_title"><%= @board.board_name %></p>
         </div>
-        <div class="col-md-5">
-          <p class="topic-search"><input type="text" class="form-control topic-search" placeholder="Search..."></p>
-        </div>
+
+      <div class="col-md-12">
+          <button class="btn btn-primary btn-create-topic">
+            <%= link_to 'New Topic', new_category_board_topic_path(@category, @board) %>
+          </button>
       </div>
-      <div class="col-md-3">
-          <button class="btn btn-primary btn-create-topic"><%= link_to 'New Topic', new_category_board_topic_path(@category, @board) %></button>
-      </div>
-    </div>
   </div>
-
-
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-12">
       <% @topics.each do |t| %>
           <div class="topic">
-            <div class="topic_title <%= cycle("odd", "even")%>">
-                <p><%= link_to t.title, category_board_topic_path(@category, @board, t) %><%= t.created_at.to_formatted_s(:extra_short) %></p>
+            <div class="bs-callout bs-callout-info topic_title <%= cycle("odd", "even")%>">
+                <p>
+                  <%= link_to t.title, category_board_topic_path(@category, @board, t) %>
+                  <span class="pull-right"><%= t.created_at.to_formatted_s(:extra_short) %></span>
+                </p>
             </div>
           </div>
       <% end %>
-    </div>
-    <div class="col-md-3">
-      <ul class="category_list">
-        <li><a href="">カテゴリ１</a></li>
-        <li><a href="">カテゴリ２</a></li>
-        <li><a href="">カテゴリ３</a></li>
-        <li><a href="">カテゴリ４</a></li>
-      </ul>
     </div>
   </div>
 </div>
