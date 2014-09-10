@@ -42,7 +42,7 @@ p.board_title {
 .col-topic-title {
 	padding-top: 40px;
 	padding-bottom: 40px;
-	border-bottom: 1px solid #B9B9B9;
+	border-bottom: 2px solid #B9B9B9;
 }
 
 h1.topic_title {
@@ -60,7 +60,7 @@ h1.topic_title {
 
 hr.under-topic-title-line {
 	margin-top: 40px;
-	border: 1px solid #a6aebb;
+	border: 2px solid #a6aebb;
 	width: 80%;
 }
 
@@ -86,7 +86,7 @@ input.topic-search {
 
 }
 .col-topic-desc-bottom-line {
-	border-bottom: 1px solid #a6aebb;
+	border-bottom: 2px solid #B9B9B9;
 }
 p.topic-desc {
 	font-family: Lato;
@@ -173,4 +173,9 @@ button.btn-user-login:focus {
 	p {
 		color: white;
 	}
+}
+
+h2.discussion-declaration {
+	font-family: Gotham;
+	font-weight: bold;
 }

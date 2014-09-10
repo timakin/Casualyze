@@ -1,4 +1,5 @@
 class Topic < ActiveRecord::Base
+	has_attached_file :clip, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 	# relationship
 	has_many :comments, :dependent => :destroy
 	has_many :votings, :dependent => :destroy
@@ -12,7 +13,7 @@ class Topic < ActiveRecord::Base
 
 	# image uploader
 	mount_uploader :image, ImageUploader
-	has_attached_file :clip, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+	validates_attachment_content_type :clip, :content_type => %w(image/jpeg image/jpg image/png)
 
 	# tagging
 	acts_as_taggable
