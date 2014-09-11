@@ -1,5 +1,14 @@
 class Topic < ActiveRecord::Base
-	has_attached_file :clip, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+	has_attached_file :clip, 
+										:styles => {
+											:medium => "300x300>",
+											:thumb => "100x100>",
+											:mini_thumb => "100x100"
+											},
+										:convert_options => {
+   										:mini_thumb  => "-gravity Center -crop 50x50+0+0"
+ 										}
+
 	# relationship
 	has_many :comments, :dependent => :destroy
 	has_many :votings, :dependent => :destroy

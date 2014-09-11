@@ -28,9 +28,8 @@
 				</div>
 			</div>
 		<% end %>
-		<div class="row">
+		<div class="row"> 
 			<div class="col-md-12">
-				<%= image_tag current_user.avatar.url(:thumb), class: "img-circle" %>
 				<% @topic.comments.each do |comment| %>
 					<%= markdown comment.body.to_s %>
 				<% end %>
