@@ -1,25 +1,29 @@
 <div class="container container-top">
-	<h2>Sign up</h2>	
+	<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4 sign-up-form">
+	<h2 class="Gotham txtCenter">Sign up</h2>	
 
 	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-	  <%= devise_error_messages! %>	
 
-	  <div><%= f.label :email %><br />
-	  <%= f.email_field :email, :autofocus => true %></div>	
+	  <div><%= f.label :email, class: "Gotham" %>
+	  <%= f.email_field :email, :autofocus => true, class: "login_form full-width" %></div>	
 
-	  <div><%= f.label :password %><br />
-	  <%= f.password_field :password %></div>	
+	  <div><%= f.label :password, class: "Gotham" %>
+	  <%= f.password_field :password, class: "login_form full-width"  %></div>	
 
-	  <div><%= f.label :password_confirmation %><br />
-	  <%= f.password_field :password_confirmation %></div>	
+	  <div><%= f.label :password_confirmation, class: "Gotham" %><br />
+	  <%= f.password_field :password_confirmation, class: "login_form full-width" %></div>	
 
 	  <div>
 	  	<%= f.label :avatar %><br />
 	  	<%= f.file_field :avatar %>
 	  </div>	
 
-	  <div><%= f.submit "Sign up" %></div>
+	  <div><%= f.submit "Sign up", class: "btn btn-primary btn-block btn-sign-up" %></div>
 	<% end %>	
+	</div>
+	</div>
+		<div class="col-md-4"></div>
 
-	<%= render "devise/shared/links" %>
 </div>
