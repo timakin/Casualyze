@@ -47,14 +47,14 @@
                 </div>             
                 <div>
                   <%= f.password_field :password, :placeholder => "Password", class: "login_form col-md-12" %><br />
-                </div>             
-                <% if devise_mapping.rememberable? -%>
-                  <div><%= f.check_box :remember_me, checked: true %></div>
-                <% end -%>
+                </div>
                 <%= f.submit "Sign in", class: "btn btn-primary btn-block" %>
-                <button type="button" class="btn btn-default btn-block" data-dismiss="modal">Cancel</button>
-              <% end %>             
-              <%= render "devise/shared/links" %>
+                <%= button_to "Sign up", new_registration_path(resource_name), class: "btn btn-primary btn-block fivePxMargin btn-sign-up" %>
+                <button type="button" class="btn btn-default btn-block fivePxMargin" data-dismiss="modal">Cancel</button>
+              <% end %>
+              <div>        
+                
+              </div>
             </div>
         </div>
       </div>
