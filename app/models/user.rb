@@ -19,4 +19,9 @@ class User < ActiveRecord::Base
   has_many :votings, :dependent => :destroy
   mount_uploader :image, ImageUploader
  	validates_attachment_content_type :avatar, :content_type => %w(image/jpeg image/jpg image/png)
+  validates :name, presence: true
+
+  def email_required?
+    false
+  end
 end

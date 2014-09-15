@@ -2,10 +2,12 @@
 <h2>Profile <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, :as => resource_name, :url => edit_user_registration_path, :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
-
+<!--
   <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <%= f.email_field :email %></div>
+-->
+  <div><%= f.label :name %><br />
+  <%= f.text_field :name %></div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
@@ -20,12 +22,13 @@
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
   <%= f.password_field :current_password %></div>
 
-    <div>
+<!--
+  <div>
     <%= image_tag current_user.avatar.url %>
     <%= f.label :avatar %><br />
     <%= f.file_field :avatar %>
   </div>
-
+-->
   <div><%= f.submit "Update" %></div>
 <% end %>
 
