@@ -11,13 +11,14 @@ class CommentsController < ApplicationController
     @board    = @category.boards.friendly.find(params[:comment][:board_id])
     @topic    = @board.topics.find(params[:comment][:topic_id])
     @comment  = @topic.comments.new(comment_params)
+    @comment.user_id = current_user.id
 
     respond_to do |format|
       if @comment.save
         format.html { redirect_to [@category, @board, @topic], notice: 'Comment was successfully created.' }
         format.json { render action: 'show', status: :created, location: @comment }
       else
-        format.html { render action: 'new' }
+        format.html { redirect_to [@category, @board, @topic], 'Comment Error' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end

@@ -1,13 +1,13 @@
 	<div class="container container-fluid">
 		<div class="row">
 			<div class="col-md-12 col-topic-title">
-				<span class="posteby-name">Posted by <%= @topic.user.email %></span>
+				<span class="posteby-name">Posted by <%= @topic.user.name %></span>
 				<span class="access-count"><%= @count_of_access %> views</span>
 
 				<h1 class="topic_title"><%= @topic.title %></h1>
 			</div>
 			<div class="col-md-12 col-topic-desc-bottom-line">
-				<div class="col-topic-desc"><p class="topic-desc"><%= markdown @topic.content %></p></div>
+				<div class="col-topic-desc ProximaNova"><p class="topic-desc"><%= markdown @topic.content %></p></div>
 			</div>
 		</div>
 	</div>
@@ -29,15 +29,18 @@
 			</div>
 		<% end %>
 		<div class="row"> 
-			<div class="col-md-12">
+			<div class="col-md-12 comment-list">
 				<% @topic.comments.each do |comment| %>
-					<%= markdown comment.body.to_s %>
+					<p class="Gotham txt18px"><%= comment.user.name %></p>
+					<p class="ProximaNova"><%= plain_markdown comment.body.to_s %></p>
 				<% end %>
 			</div>
 		</div>
 	</div>
 
-
+<style>
+<%= Pygments.css %>
+</style>
 <script>
 	ahoy.trackview();
 </script>

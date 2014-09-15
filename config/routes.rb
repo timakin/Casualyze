@@ -1,5 +1,5 @@
 Nyanda::Application.routes.draw do
-	devise_for :users, :controllers => {:registrations => "users/registrations"}, skip: [:sessions, :registrations]
+	devise_for :users, :controllers => {:registrations => "users/registrations", :sessions => "users/sessions"}, skip: [:sessions, :registrations]
 	devise_scope :user do
 		get '/in', to: 'devise/sessions#new', as: :new_user_session
 		post '/in', to: 'devise/sessions#create', as: :user_session
