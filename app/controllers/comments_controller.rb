@@ -18,17 +18,9 @@ class CommentsController < ApplicationController
         format.html { redirect_to [@category, @board, @topic], notice: 'Comment was successfully created.' }
         format.json { render action: 'show', status: :created, location: @comment }
       else
-        format.html { redirect_to [@category, @board, @topic], 'Comment Error' }
+        format.html { redirect_to [@category, @board, @topic], notice: 'Comment Error' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  def destroy
-    @comment.destroy
-    respond_to do |format|
-      format.html { redirect_to [@category, @board, @topic] }
-      format.json { head :no_content }
     end
   end
 
