@@ -5,13 +5,12 @@
 	<h2 class="Gotham txtCenter">Sign up</h2>	
 
 	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-	<%= devise_error_messages! %>
 <!--
 	  <div><%= f.label :email, class: "Gotham" %>
 	  <%= f.email_field :email, class: "login_form full-width" %></div>	
 	-->
 
-	  <div><%= f.label :name, class: "Gotham" %><br />
+	  <div><%= f.label :name, class: "Gotham" %>
 	  <%= f.text_field :name, class: "login_form full-width" %></div>
 
 	  <div><%= f.label :password, class: "Gotham" %>

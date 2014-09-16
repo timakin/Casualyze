@@ -32,7 +32,7 @@
 			<div class="col-md-12 comment-list">
 				<% @topic.comments.each do |comment| %>
 					<p class="Gotham txt18px"><%= comment.user.name %></p>
-					<p class="ProximaNova"><%= plain_markdown comment.body.to_s %></p>
+					<div class="comment-desc"><p class="ProximaNova"><%= plain_markdown comment.body.to_s %></p></div>
 				<% end %>
 			</div>
 		</div>
