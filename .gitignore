@@ -17,7 +17,7 @@
 
 # Ignore Public Uploaded Images
 /public/system
-
+/public/assets/*
 config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
