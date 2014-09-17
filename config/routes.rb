@@ -1,4 +1,5 @@
 Nyanda::Application.routes.draw do
+  get "search/result"
 	devise_for :users, :controllers => {:registrations => "users/registrations"}, skip: [:sessions, :registrations]
 	devise_scope :user do
 		get '/in', to: 'devise/sessions#new', as: :new_user_session
@@ -15,6 +16,11 @@ Nyanda::Application.routes.draw do
 	end
 #	devise_for :admin_users, ActiveAdmin::Devise.config
 #	ActiveAdmin.routes(self)
+	resources :search, :only => [:result, :get_result] do
+    collection do
+      match 'result' => 'search#result', via: [:get, :post], as: :result
+    end
+	end
 	resources :comments, :only => [:create]
 	resources :categories, :only => [:create, :destroy], :path => '/g' do
 		resources :boards, :only => [:index], :path => '' do
