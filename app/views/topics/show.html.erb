@@ -11,9 +11,9 @@
 			</div>
 		</div>
 	</div>
-<!--	<p><%= image_tag(@topic.clip.url(:medium)) %></p> -->
-<!--	<p>Tags: <%= raw @topic.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>  -->
-<!--	<p>Voted Number: <%= @voted_num %></p><%= link_to 'Vote', vote_path(params) %> -->
+	<!--	<p><%= image_tag(@topic.clip.url(:medium)) %></p> -->
+	<!--	<p>Tags: <%= raw @topic.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>  -->
+	<!--	<p>Voted Number: <%= @voted_num %></p><%= link_to 'Vote', vote_path(params) %> -->
 
 	<div class="container">
 		<div class="row">
@@ -22,25 +22,25 @@
 			</div>
 		</div>
 		<% if user_signed_in? %>
-			<div class="row">
-				<div class="col-md-12">
-					<%= render 'comments/form' %>	
-				</div>
+		<div class="row">
+			<div class="col-md-12">
+				<%= render 'comments/form' %>	
 			</div>
+		</div>
 		<% end %>
 		<div class="row"> 
 			<div class="col-md-12 comment-list">
 				<% @topic.comments.each do |comment| %>
-					<p class="Gotham txt18px"><%= comment.user.name %></p>
-					<div class="comment-desc"><p class="ProximaNova"><%= plain_markdown comment.body.to_s %></p></div>
+				<p class="Gotham txt18px"><%= comment.user.name %></p>
+				<div class="comment-desc"><p class="ProximaNova"><%= plain_markdown comment.body.to_s %></p></div>
 				<% end %>
 			</div>
 		</div>
 	</div>
 
-<style>
-<%= Pygments.css %>
-</style>
-<script>
+	<style>
+	<%= Pygments.css %>
+	</style>
+	<script>
 	ahoy.trackview();
-</script>
+	</script>

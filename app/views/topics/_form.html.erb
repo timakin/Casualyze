@@ -1,34 +1,36 @@
+
 <%= form_for [@category, @board, @topic], :html => {:multipart => true} do |f| %>
-  <% if @topic.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@topic.errors.count, "error") %> prohibited this topic from being saved:</h2>
+<% if @topic.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@topic.errors.count, "error") %> prohibited this topic from being saved:</h2>
 
-      <ul>
-        <% @topic.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% @topic.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
-  </div>
-  <div class="field">
-    <%= f.label :clip %><br>
-    <%= f.file_field :clip %>
-  </div>
-  <div class="field">
-    <%= f.label :tag_list %><br>
-    <%= f.text_field :tag_list %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div class="field">
+  <%= f.label :title, class: "Gotham" %><br>
+  <%= f.text_field :title, class: "full-width formDesign" %>
+</div>
+<div class="field">
+  <%= f.label :content, class: "Gotham" %><br>
+  <%= f.text_area :content, class: "full-width formDesign topic-content" %>
+</div>
+<!--
+<div class="field">
+  <%= f.label :clip, class: "Gotham" %><br>
+  <%= f.file_field :clip %>
+</div>
+<div class="field">
+  <%= f.label :tag_list, class: "Gotham" %><br>
+  <%= f.text_field :tag_list, class: "full-width formDesign" %>
+</div>
+-->
+<div class="actions">
+  <%= f.submit "Create Topic", class: "btn btn-primary btn-block btn-sign-up" %>
+</div>
 <% end %>
