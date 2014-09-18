@@ -102,7 +102,7 @@ input.topic-search:focus {
 	color: black;
 }
 
-button.btn-create-topic {
+.btn-create-topic {
 	background-color: #5bc0de;
 	border: 1px solid #5bc0de;
 	border-radius: 0px;
@@ -123,19 +123,19 @@ button.btn-create-topic {
 	}
 }
 
-button.btn-create-topic:hover {
+.btn-create-topic:hover {
 	background-color: #30B1D8;
 	border: 1px solid #30B1D8;
 	border-radius: 0px;
 }
 
-button.btn-create-topic:focus {
+.btn-create-topic:focus {
 	background-color: #30B1D8;
 	border: 1px solid #30B1D8;
 	border-radius: 0px;
 }
 
-button.btn-user-login {
+.btn-user-login {
 	background-color: red;
 	border: 1px solid red;
 	border-radius: 3px;
@@ -156,12 +156,12 @@ button.btn-user-login {
 	}
 }
 
-button.btn-user-login:hover {
+.btn-user-login:hover {
 	background-color: red;
 	border: 1px solid red;
 }
 
-button.btn-user-login:focus {
+.btn-user-login:focus {
 	background-color: red;
 	border: 1px solid red;
 }

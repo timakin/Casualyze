@@ -38,7 +38,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Sign in</h4>
+        <h4 class="modal-title Gotham" id="myModalLabel">Sign in</h4>
       </div>
       <div class="modal-body">
         <%= form_for(:user, :url => session_path(:user)) do |f| %>
@@ -48,10 +48,10 @@
         <div>
           <%= f.password_field :password, :placeholder => "Password", class: "login_form full-width" %><br />
         </div>
-        <%= f.submit "Sign in", class: "btn btn-primary btn-block" %>
+        <%= f.submit "Sign in", class: "btn btn-primary btn-block btn-sign-in Gotham" %>
         <% end %>
-        <%= button_to "Sign up", new_registration_path(resource_name), class: "btn btn-primary btn-block fivePxMargin btn-sign-up" %>
-        <button type="button" class="btn btn-default btn-block fivePxMargin" data-dismiss="modal">Cancel</button>
+        <%= button_to "Sign up", new_registration_path(resource_name), class: "btn btn-primary btn-block fivePxMargin btn-sign-up Gotham" %>
+        <button type="button" class="btn btn-default btn-block btn-sign-in fivePxMargin Gotham" data-dismiss="modal">Cancel</button>
         <div>        
           
         </div>

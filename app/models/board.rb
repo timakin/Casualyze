@@ -5,4 +5,8 @@ class Board < ActiveRecord::Base
 	has_many :topics, :dependent => :destroy
   has_many :comments, :through => :topics, :dependent => :destroy
   validates :board_name, :category_id, presence: true
+
+  def should_generate_new_friendly_id?
+  	new_record? || slug.blank?
+	end
 end

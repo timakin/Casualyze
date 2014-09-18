@@ -176,23 +176,16 @@ a {
   .il { color: #009999 } /* Literal.Number.Integer.Long */
 }
 
-.main {
-  margin-top: 60px;
-}
-.Gotham {
-  font-family: Gotham;
-}
-.ProximaNova {
-  font-family: ProximaNova;
-}
-.txtCenter {
-  text-align: center;
-}
-.txt18px {
-  font-size: 18px;
-}
-.full-width {
-  width: 100%;
+.main { margin-top: 60px; }
+.Gotham { font-family: Gotham; }
+.ProximaNova { font-family: ProximaNova; }
+.txtCenter { text-align: center; }
+.txt18px { font-size: 18px; }
+.txtWhite { color: white; }
+.full-width { width: 100%; }
+.pad10px { padding: 10px; }
+input.whitePlace::-moz-placeholder {
+  color: white;
 }
 .formDesign {
   border: 2px solid #ddd;

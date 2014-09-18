@@ -4,12 +4,12 @@
 		<p class="jumbotron-title-desc-home">Modern Scheme for Hacker's Topic Sharing</p>
 		<br>
 		<%= search_form_for @search, url: result_search_index_path, html: { method: :post } do |f| %>
-			<div class="input-group home-input">
-				<%= f.search_field :title_cont, class: "form-control home-input-form", placeholder: "Type in topic title", :autocomplete => :off  %>
-				<div class="input-group-btn">
-					<%= f.submit "Go", class: "btn btn-default home-input-btn" %>
-				</div>
+		<div class="input-group home-input">
+			<%= f.search_field :title_cont, class: "form-control home-input-form whitePlace", placeholder: "Type in topic title", :autocomplete => :off  %>
+			<div class="input-group-btn">
+				<%= f.submit "Go", class: "btn btn-default home-input-btn" %>
 			</div>
+		</div>
 		<% end %>
 
 	</div>
@@ -21,9 +21,7 @@
 			<div class="btn-group btn-group-justified">
 				<% boards.each do |t| %>
 				<div class="btn-group">
-					<button type="button" class="btn btn-default btn-home-category-list">
-						<%= link_to t.board_name, category_board_topics_path(t.category_id, t.id) %>
-					</button>
+					<%= link_to t.board_name, category_board_topics_path(Category.find(t.category_id).name, t.board_name), class: "btn btn-primary btn-home-category-list txtWhite" %>
 				</div>
 				<% end %>
 			</div>
@@ -38,7 +36,7 @@
 			<ul class="list-group">
 				<% @popular_topics.each do |t| %>
 				<li class="list-group-item list-group-item-home">
-					<%= link_to t.title, category_board_topic_path(Category.find(t.category_id), Board.find(t.board_id), t.id), class: 'list-group-item-title-pop' %>
+					<%= link_to t.title, category_board_topic_path(Category.find(t.category_id).name, Board.find(t.board_id).board_name, t.id), class: 'list-group-item-title-pop' %>
 					<span class="badge list-group-item-badge pull-right"><%= TopicVisit.where(topic_id: t.id).size %></span>
 				</li>
 				<% end %>
@@ -49,7 +47,7 @@
 			<ul class="list-group">
 				<% @latest_topics.each do |t| %>
 				<li class="list-group-item list-group-item-home">
-					<%= link_to t.title, category_board_topic_path(Category.find(t.category_id), Board.find(t.board_id), t.id), class: 'list-group-item-title-latest' %>
+					<%= link_to t.title, category_board_topic_path(Category.find(t.category_id).name, Board.find(t.board_id).board_name, t.id), class: 'list-group-item-title-latest' %>
 					<span class="pull-right">1 days ago</span>
 				</li>
 				<% end %>
@@ -57,6 +55,8 @@
 		</div>
 	</div>
 </div>
+
+
 
 <script>
 $(function(){

@@ -5,9 +5,7 @@
     </div>
 
     <div class="col-md-12">
-      <button class="btn btn-primary btn-create-topic">
-        <%= link_to 'New Topic', new_category_board_topic_path(@category, @board) %>
-      </button>
+        <%= link_to 'New Topic', new_category_board_topic_path(@category, @board), class: "btn btn-primary btn-create-topic" %>
     </div>
   </div>
   <div class="row">

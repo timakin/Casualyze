@@ -7,4 +7,8 @@ class Category < ActiveRecord::Base
   has_many :comments, :through => :topics, :dependent => :destroy
   accepts_nested_attributes_for :boards, :allow_destroy => true
   validates :name, presence: true
+
+  def should_generate_new_friendly_id?
+  	new_record? || slug.blank?
+	end
 end

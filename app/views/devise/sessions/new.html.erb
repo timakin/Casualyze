@@ -23,9 +23,10 @@
           <% end -%>
 
           <div>
-            <%= f.submit "Sign in", class: "btn btn-primary btn-block btn-sign-up" %>
+            <%= f.submit "Sign in", class: "btn btn-primary btn-block btn-sign-in Gotham" %>
           </div>
         <% end %>
+        <%= button_to "Sign up", new_registration_path(resource_name), class: "btn btn-primary btn-block fivePxMargin btn-sign-up Gotham" %>
       </div>
     <div class="col-md-4"></div>
   </div>

@@ -59,9 +59,13 @@ input.home-input-form:-moz-placeholder { color: #fff; }
 	border-color: none;
 	background-color: transparent;
 }
+.btn-sign-in {
+	padding: 10px;
+}
 .btn-sign-up {
 	background-color: #106EB4;
 	border-color: #106EB4;
+	padding: 10px;
 }
 .fivePxMargin {
 	margin-top: 5px; 
@@ -83,7 +87,6 @@ input.home-input-form:-moz-placeholder { color: #fff; }
 	font-family: Lato;
 	font-weight: bold;
 	text-align: center;
-
 }
 
 .btn-home-category-list {
@@ -111,6 +114,9 @@ input.home-input-form:-moz-placeholder { color: #fff; }
 	font-weight: bold;
 }
 
+.txtWhite {
+  color: white;
+}
 .typed-cursor{
     opacity: 1;
     -webkit-animation: blink 0.7s infinite;
@@ -140,3 +146,4 @@ input.home-input-form:-moz-placeholder { color: #fff; }
 		margin-left: auto;
 	}
 }
+

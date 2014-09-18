@@ -22,7 +22,7 @@ Nyanda::Application.routes.draw do
     end
 	end
 	resources :comments, :only => [:create]
-	resources :categories, :only => [:create, :destroy], :path => '/g' do
+	resources :categories, :only => [:create, :destroy], :path => '/c' do
 		resources :boards, :only => [:index], :path => '' do
 	    resources :topics, :path => '' do
 	    end
