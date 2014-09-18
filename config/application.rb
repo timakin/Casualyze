@@ -22,6 +22,7 @@ module Nyanda
     config.i18n.default_locale = :en
     config.action_controller.action_on_unpermitted_parameters = :raise
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+    config.assets.paths << "#{Rails.root}/app/assets/video"
     config.assets.precompile += %w( .svg .eot .woff .ttf .otf ) 
   end
 end

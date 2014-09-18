@@ -33,6 +33,8 @@ Nyanda::Application.routes.draw do
 	get "home/index"
 	root :to => "home#index"
 
+	get  '*not_found' => 'application#routing_error'
+  post '*not_found' => 'application#routing_error'
 	# Example of regular route:
 	#   get 'products/:id' => 'catalog#view'
 

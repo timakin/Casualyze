@@ -18,7 +18,7 @@ class TopicsController < ApplicationController
     @board = set_board
     @topic = set_topic
 		@comment = @topic.comments.build
-    @vote = Voting.find_all_by_topic_id(params[:id])
+    @vote = Voting.where(:topic_id => params[:id])
     @voted_num = @vote.size
     @count_of_access = access_num_of_topic
   end
