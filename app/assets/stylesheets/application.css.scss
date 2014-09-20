@@ -181,12 +181,17 @@ a {
 .ProximaNova { font-family: ProximaNova; }
 .txtCenter { text-align: center; }
 .txt18px { font-size: 18px; }
+.txt26px { font-size: 26px; }
 .txtBold { font-weight: bold; }
 .txtWhite { color: white; }
 .txtRed { color: red; }
 .full-width { width: 100%; }
 .pad10px { padding: 10px; }
-
+.wordBreak { word-break: true };
+.contentPadding { 
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
 
 input.whitePlace::-moz-placeholder {
   color: white;

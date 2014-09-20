@@ -31,6 +31,8 @@ Nyanda::Application.routes.draw do
 	get 'vote', to: 'votings#vote_to_topic'
 	get 'tags/:tag', to: 'tags#index', as: :tag
 	get "home/index"
+	get 'about', to: 'home#about', as: :about
+	get 'sextant_mount', to: "sextant/routes#index"
 	root :to => "home#index"
 
 	get  '*not_found' => 'application#routing_error'

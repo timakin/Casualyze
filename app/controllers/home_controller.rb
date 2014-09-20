@@ -8,6 +8,10 @@ class HomeController < ApplicationController
   	@latest_topics 	= Topic.all(limit: 5, order: 'created_at desc')
   end
 
+  def about
+    
+  end
+
   before_filter :set_search
 
 	def set_search
