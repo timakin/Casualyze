@@ -143,7 +143,15 @@ gem "therubyracer"
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
+
+group :development do
+  gem "capistrano"
+  gem "capistrano-rails"
+  gem "capistrano-bundler"
+  gem "capistrano-rbenv"
+  gem "capistrano3-unicorn"
+end
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
