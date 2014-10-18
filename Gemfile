@@ -146,12 +146,11 @@ gem "therubyracer"
 gem 'unicorn'
 
 group :deployment do
-  gem "capistrano"
+  gem "capistrano", git: 'https://github.com/capistrano/capistrano.git'
   gem "capistrano-rails"
   gem "capistrano-bundler"
   gem "capistrano-rbenv"
   gem "capistrano3-unicorn"
-  gem 'capistrano_colors'
   gem 'capistrano-ext'
   gem 'capistrano_rsync_with_remote_cache'
 end
