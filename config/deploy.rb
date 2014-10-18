@@ -7,7 +7,7 @@ require "bundler/capistrano"
 # RVMを利用している場合は必要
 $:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 require 'rvm/capistrano'
-set :rvm_ruby_string, '1.9.2'
+set :rvm_ruby_string, '2.0.0'
 set :rvm_type, :user
 
 # リポジトリの設定
@@ -19,9 +19,9 @@ set :deploy_via, :remote_cache
 set :deploy_to, "/var/www/#{application}"
 set :rails_env, "production"
 
-role :web, "www11100uo.sakura.ne.jp"  #デプロイ先SSHポートを指定（デフォルトは22）
-role :app, "www11100uo.sakura.ne.jp"
-role :db,  "www11100uo.sakura.ne.jp", :primary => true
+role :web, "153.121.70.114"  #デプロイ先SSHポートを指定（デフォルトは22）
+role :app, "153.121.70.114"
+role :db,  "153.121.70.114", :primary => true
 
 # SSHの設定
 set :user, "timakin"
