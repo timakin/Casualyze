@@ -7,20 +7,20 @@ GIT
 
 GIT
   remote: git://github.com/decioferreira/bootstrap-generators.git
-  revision: 41d35849737e7408be1c1ac7602251c4758aaa51
+  revision: 8627bb97720bbad9b037faba92382759ff68706d
   specs:
-    bootstrap-generators (3.1.1.3)
+    bootstrap-generators (3.2.0)
       railties (>= 3.1.0)
 
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: 6472173b22621c4f838c70c1b9a47dc22b8f3fa3
+  revision: 05778f4b7c8e821d584c7b4b08bcd79c02a0db76
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0, >= 1.0.2)
       bourbon
       coffee-rails
-      formtastic (~> 2.3)
+      formtastic (~> 3.0)
       inherited_resources (~> 1.4.1)
       jquery-rails
       jquery-ui-rails (~> 5.0)
@@ -42,7 +42,7 @@ GIT
 
 GIT
   remote: https://github.com/thomas-mcdonald/bootstrap-sass.git
-  revision: c062283837c63ed8e7b77b52c513db30ecb6cdb5
+  revision: 452506d6be0827ca1451e3732ce6eec9f87ce547
   specs:
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
@@ -77,9 +77,9 @@ GEM
     activeuuid (0.5.0)
       activerecord (>= 3.1)
       uuidtools
-    acts-as-taggable-on (3.4.1)
+    acts-as-taggable-on (3.4.2)
       activerecord (>= 3.2, < 5)
-    acts_as_commentable (4.0.1)
+    acts_as_commentable (4.0.2)
     addressable (2.3.6)
     ahoy_matey (1.0.2)
       addressable
@@ -102,7 +102,7 @@ GEM
     bourbon (3.2.3)
       sass (~> 3.2)
       thor
-    browser (0.6.0)
+    browser (0.7.0)
     builder (3.1.4)
     callsite (0.0.11)
     cancan (1.6.10)
@@ -126,7 +126,7 @@ GEM
     capistrano_colors (0.5.5)
     capistrano_rsync_with_remote_cache (2.4.0)
       capistrano (>= 2.1.0)
-    capybara (2.4.1)
+    capybara (2.4.4)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
       rack (>= 1.0.0)
@@ -139,7 +139,7 @@ GEM
       mime-types (>= 1.16)
     celluloid (0.16.0)
       timers (~> 4.0.0)
-    childprocess (0.5.3)
+    childprocess (0.5.5)
       ffi (~> 1.0, >= 1.0.11)
     choice (0.1.6)
     climate_control (0.0.3)
@@ -156,10 +156,11 @@ GEM
     coffee-script-source (1.8.0)
     colorize (0.7.3)
     debug_inspector (0.0.2)
-    devise (3.3.0)
+    devise (3.4.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
+      responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
@@ -167,25 +168,25 @@ GEM
       rails (> 3.1)
     ejs (1.1.1)
     erubis (2.7.0)
-    execjs (2.2.1)
-    factory_girl (4.4.0)
+    execjs (2.2.2)
+    factory_girl (4.5.0)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.4.1)
-      factory_girl (~> 4.4.0)
+    factory_girl_rails (4.5.0)
+      factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
-    ffi (1.9.3)
+    ffi (1.9.6)
     font-awesome-rails (4.2.0.0)
       railties (>= 3.2, < 5.0)
     foreigner (1.6.1)
       activerecord (>= 3.0.0)
     formatador (0.2.5)
-    formtastic (2.3.1)
-      actionpack (>= 3.0)
+    formtastic (3.0.0)
+      actionpack (>= 3.2.13)
     friendly_id (5.0.4)
       activerecord (>= 4.0.0)
-    geocoder (1.2.4)
+    geocoder (1.2.5)
     growl (1.0.3)
     guard (2.6.1)
       formatador (>= 0.2.4)
@@ -220,7 +221,7 @@ GEM
     jquery-rails (2.1.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    jquery-ui-rails (5.0.0)
+    jquery-ui-rails (5.0.2)
       railties (>= 3.2.16)
     json (1.8.1)
     jwt (1.0.0)
@@ -228,10 +229,10 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     kgio (2.9.2)
-    libnotify (0.8.3)
+    libnotify (0.8.4)
       ffi (>= 1.0.11)
-    libv8 (3.16.14.5)
-    listen (2.7.9)
+    libv8 (3.16.14.7)
+    listen (2.7.11)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
@@ -281,7 +282,7 @@ GEM
       multi_json (~> 1.3)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
-    omniauth-twitter (1.0.1)
+    omniauth-twitter (1.1.0)
       multi_json (~> 1.3)
       omniauth-oauth (~> 1.0)
     orm_adapter (0.5.0)
@@ -333,7 +334,7 @@ GEM
       activesupport (>= 3.0)
       choice (~> 0.1.6)
       ruby-graphviz (~> 1.0.4)
-    rails_12factor (0.0.2)
+    rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
     rails_config (0.4.2)
@@ -347,7 +348,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.13.0)
     rake (10.3.2)
-    ransack (1.3.0)
+    ransack (1.4.1)
       actionpack (>= 3.0)
       activerecord (>= 3.0)
       activesupport (>= 3.0)
@@ -358,7 +359,7 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.1.2)
       json (~> 1.4)
-    redcarpet (3.1.2)
+    redcarpet (3.2.0)
     reditor (0.1.1)
       thor (>= 0.15.4)
     ref (1.0.5)
@@ -371,12 +372,12 @@ GEM
       rspec-core (~> 3.1.0)
       rspec-expectations (~> 3.1.0)
       rspec-mocks (~> 3.1.0)
-    rspec-core (3.1.2)
+    rspec-core (3.1.7)
       rspec-support (~> 3.1.0)
-    rspec-expectations (3.1.0)
+    rspec-expectations (3.1.2)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.1.0)
-    rspec-mocks (3.1.0)
+    rspec-mocks (3.1.3)
       rspec-support (~> 3.1.0)
     rspec-rails (3.1.0)
       actionpack (>= 3.0)
@@ -386,7 +387,7 @@ GEM
       rspec-expectations (~> 3.1.0)
       rspec-mocks (~> 3.1.0)
       rspec-support (~> 3.1.0)
-    rspec-support (3.1.0)
+    rspec-support (3.1.2)
     ruby-graphviz (1.0.9)
     sass (3.2.19)
     sass-rails (4.0.3)
@@ -428,7 +429,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (2.3.0)
+    turbolinks (2.4.0)
       coffee-rails
     tzinfo (0.3.41)
     uglifier (2.5.3)
@@ -436,7 +437,7 @@ GEM
       json (>= 1.8.0)
     underscore-rails (1.7.0)
     unicode-display_width (0.1.1)
-    unicorn (4.8.2)
+    unicorn (4.8.3)
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
