@@ -145,12 +145,15 @@ gem "therubyracer"
 # Use unicorn as the app server
 gem 'unicorn'
 
-group :development do
+group :deployment do
   gem "capistrano"
   gem "capistrano-rails"
   gem "capistrano-bundler"
   gem "capistrano-rbenv"
   gem "capistrano3-unicorn"
+  gem 'capistrano_colors'
+  gem 'capistrano-ext'
+  gem 'capistrano_rsync_with_remote_cache'
 end
 
 # Use Capistrano for deployment

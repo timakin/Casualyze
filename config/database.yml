@@ -20,7 +20,7 @@ development:
 test:
   adapter: mysql2
   encoding: utf8
-  database: db/test_nyanda
+  database: db/casualyze_test
   username: root
   password: tima0313
   host: localhost
@@ -29,12 +29,10 @@ test:
   socket: /tmp/mysql.sock
 
 production:
-  adapter: postgresql
-  encoding: utf8
-  username: txnoblhelwfcxg
-  password: 7mAvoX0tXCtFsMssfD2xbskmi1
-  host: ec2-107-21-226-77.compute-1.amazonaws.com
-  port: 5432
-  database: dai2ssmth2jdch
+  adapter: mysql2
+  database: db/casualyze_production
+  username: root
+  password: tima0313
   pool: 5
   timeout: 5000
+  socket: /var/run/mysqld/mysqld.sock
