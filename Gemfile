@@ -8,7 +8,7 @@ gem 'rails', '4.0.4'
 gem 'mysql2', :group => [:development, :test]
 
 group :production do
-  gem 'pg'
+  gem 'mysql2'
 end
 
 group :assets do
