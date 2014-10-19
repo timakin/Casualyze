@@ -2,7 +2,7 @@ lock '3.2.1'
 
 set :application, 'casualyze'
 set :repo_url, 'git@github.com:timakin/Casualyze.git'
-set :deploy_to, '/var/www/#{fetch(:application)}'
+set :deploy_to, '/var/www/casualyze'
 set :keep_releases, 5
 
 set :rbenv_type, :system # :system or :user
