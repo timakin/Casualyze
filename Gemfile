@@ -5,11 +5,7 @@ gem 'rails', '4.0.4'
 
 # DB設定
 #gem 'sqlite3', :group => [:development, :test]
-gem 'mysql2', :group => [:development, :test]
-
-group :production do
-  gem 'mysql2'
-end
+gem 'mysql2', :group => [:development, :test, :production]
 
 group :assets do
   gem 'jquery-rails'
@@ -26,7 +22,6 @@ group :assets do
 
   # ずるいデザイン
   gem "zurui-sass-rails"
-  gem 'jquery-rails'
 
   # backbone用ライブラリ
   gem 'underscore-rails'
@@ -66,7 +61,6 @@ group :development, :test do
   # Guard
   gem 'guard'
   gem 'guard-spork'
-  gem 'guard-rspec'
 
   # Notify
   gem 'growl', require: false # for Mac
