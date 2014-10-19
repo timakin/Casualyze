@@ -1,4 +1,4 @@
-application = 'Casualyze'
+application = 'casualyze'
 
 listen "/tmp/unicorn_#{application}.sock"
 pid "/tmp/unicorn_#{application}.pid"
