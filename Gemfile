@@ -144,13 +144,16 @@ gem "therubyracer"
 
 # Use unicorn as the app server
 gem 'unicorn'
+# cron
+gem 'whenever', require: false
 
 group :deployment do
-  gem "capistrano", git: 'https://github.com/capistrano/capistrano.git'
+  gem "capistrano", '~> 3.2.1'
   gem "capistrano-rails"
   gem "capistrano-bundler"
   gem "capistrano-rbenv"
   gem "capistrano3-unicorn"
+  gem 'rvm1-capistrano3', require: false
   gem 'capistrano-ext'
   gem 'capistrano_rsync_with_remote_cache'
 end
