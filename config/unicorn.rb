@@ -1,5 +1,5 @@
 application = 'casualyze'
-
+set :unicorn_config_path => -> { File.join(current_path, "config", "deploy", "#{fetch(:rails_env)}.rb") }
 listen "/tmp/unicorn_#{application}.sock"
 pid "/tmp/unicorn_#{application}.pid"
 
