@@ -1,5 +1,4 @@
 application = 'casualyze'
-set :unicorn_config_path => -> { File.join(current_path, "config", "deploy", "#{fetch(:rails_env)}.rb") }
 listen "/tmp/unicorn_#{application}.sock"
 pid "/tmp/unicorn_#{application}.pid"
 
@@ -13,6 +12,8 @@ if ENV['RAILS_ENV'] == 'production'
   shared_path = "/var/www/#{application}/shared"
   stderr_path = "#{shared_path}/log/unicorn.stderr.log"
   stdout_path = "#{shared_path}/log/unicorn.stdout.log"
+  set :unicorn_config_path, -> { File.join(current_path, "config", "deploy", "#{fetch(:rails_env)}.rb") }
+
 end
 
 # ログ
