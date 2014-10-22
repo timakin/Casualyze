@@ -1,8 +1,8 @@
 set :branch, 'master'
-set :stage, :production
-set :rails_env, :production
+#set :stage, :production  
+#set :rails_env, :production
 
-role :app, %w{timakin@153.121.70.114}
+role :app, %w{timakin@153.121.70.114 }
 role :web, %w{timakin@153.121.70.114}
 role :db,  %w{timakin@153.121.70.114}
 
