@@ -10,8 +10,5 @@ server '153.121.70.114', user: 'timakin', roles: %w{web app db}
 
 set :ssh_options, {
     keys: %w('~/.ssh/id_rsa'),
-    forward_agent: true,
-    verbose: :debug,
-    user: 'timakin',
-    password: 'tima0313'
+    forward_agent: true
 }
