@@ -6,7 +6,7 @@ role :app, %w{timakin@153.121.70.114}
 role :web, %w{timakin@153.121.70.114}
 role :db,  %w{timakin@153.121.70.114}
 
-server 'www11100uo.sakura.ne.jp', user: 'timakin', roles: %w{web app db}
+server '153.121.70.114', user: 'timakin', roles: %w{web app db}
 
 set :ssh_options, {
     keys: %w('~/.ssh/id_rsa.pub'),
