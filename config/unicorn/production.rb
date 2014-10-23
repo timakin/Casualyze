@@ -9,6 +9,7 @@ role :db,  %w{timakin@153.121.70.114}
 server 'casualyze.com', user: 'timakin', roles: %w{web app db}
 
 set :ssh_options, {
-    keys: %w('~/.ssh/id_rsa.pub'),
-    forward_agent: true
+  keys: %w('~/.ssh/id_rsa'),
+  forward_agent: true,
+  auth_methods: %w(publickey)
 }
