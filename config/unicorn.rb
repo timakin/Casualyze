@@ -1,6 +1,6 @@
 application = 'casualyze'
-listen "/tmp/unicorn_#{application}.sock"
-pid "/tmp/unicorn_#{application}.pid"
+listen "/tmp/unicorn.sock"
+pid "/tmp/unicorn.pid"
 
 worker_processes 6
 preload_app true
