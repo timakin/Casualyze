@@ -1,8 +1,8 @@
-role :app, %w{timakin@153.121.70.114}
-role :web, %w{timakin@153.121.70.114}
-role :db,  %w{timakin@153.121.70.114}
+role :app, %w{timakin@casualyze.com}
+role :web, %w{timakin@casualyze.com}
+role :db,  %w{timakin@casualyze.com}
 
-server '153.121.70.114', user: 'timakin', roles: %w{web app db}
+server 'casualyze.com', user: 'timakin', roles: %w{web app db}
 
 set :ssh_options, {
     keys: %w(~/.ssh/id_rsa),
