@@ -152,6 +152,10 @@ group :deployment do
   gem 'capistrano_rsync_with_remote_cache'
 end
 
+group :production do
+  gem 'google-analytics-rails'
+end
+
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
