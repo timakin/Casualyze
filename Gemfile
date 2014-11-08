@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
 
-# DB設定
+# DB
 #gem 'sqlite3', :group => [:development, :test]
 gem 'mysql2', :group => [:development, :test, :production]
 
@@ -15,19 +15,19 @@ group :assets do
   gem 'bootstrap-generators', :git => 'git://github.com/decioferreira/bootstrap-generators.git'
   gem "font-awesome-rails"
 
-  # デフォルトのassets用のgem
+  # default
   gem 'sass-rails', '~> 4.0.0'
   gem 'uglifier', '>= 1.3.0'
   gem 'coffee-rails', '~> 4.0.0'
 
-  # ずるいデザイン
+  # zurui-design
   gem "zurui-sass-rails"
 
-  # backbone用ライブラリ
+  # backbone
   gem 'underscore-rails'
   gem 'rails-backbone'
 
-  # ブラウザ互換用ライブラリ
+  # browser expansion
   gem 'bourbon'
 end
 
@@ -41,7 +41,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'binding_of_caller'
   
-  # ブラウザでの確認を容易にする
+  # supporter
   gem 'sextant'
   gem 'quiet_assets'
   gem 'better_errors'
@@ -72,45 +72,45 @@ end
 gem 'dropzonejs-rails'
 gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'
 
-# 会員登録用
+# registration
 gem 'devise'
 
-# OmniAuthログイン用
+# OmniAuth
 gem 'omniauth'
 gem "omniauth-facebook"
 gem "omniauth-twitter"
 gem 'omniauth-google-oauth2'
 
-# コメント機能（予備）
+# comments
 gem 'acts_as_commentable'
 
-# タグ機能
+# tags
 gem 'acts-as-taggable-on'
 
-# 権限管理
+# authentification
 gem 'cancan'
 gem 'party_boy'
 
-# 検索機能
+# search
 gem 'ransack'
 
-# フィード実装用
+# feed
 gem 'public_activity'
 gem 'reditor'
 gem 'friendly_id'
 gem 'foreigner'
 
-# Markdown機能用
+# Markdown
 gem 'redcarpet'
 gem "pygments.rb"
 gem "nokogiri"
 
-# 管理画面用
+# admin
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem "polyamorous", :github => "activerecord-hackery/polyamorous"
 #gem "formtastic", github: "justinfrench/formtastic"
 
-# 写真アップロード機能
+# picture upload
 gem 'carrierwave'
 gem 'mime-types'
 gem 'mini_magick'
@@ -122,9 +122,14 @@ gem 'paperclip'
 gem 'ahoy_matey'
 gem 'activeuuid', '>= 0.5.0'
 
-# デフォルトのgem
+# default
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
+
+# GA
+gem 'google-analytics-rails'
+gem 'google-analytics-turbolinks'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -152,9 +157,6 @@ group :deployment do
   gem 'capistrano_rsync_with_remote_cache'
 end
 
-group :production do
-  gem 'google-analytics-rails'
-end
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
