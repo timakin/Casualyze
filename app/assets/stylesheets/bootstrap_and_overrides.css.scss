@@ -130,7 +130,7 @@ border-color: #5bc0de;
 }
 
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-device-width: 480px) {
 	.container {
 		width: 100%;
 	}
