@@ -8,7 +8,8 @@ class TopicsController < ApplicationController
   def index
     @category = Category.friendly.find(params[:category_id])
     @board = @category.boards.friendly.find(params[:board_id])
-    @topics = @board.topics.all
+    @all_topics = @board.topics.all
+    @topics = Kaminari.paginate_array(@all_topics).page(params[:page]).per(10)
   end
 
   # GET /topics/1

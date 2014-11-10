@@ -27,4 +27,7 @@ class Topic < ActiveRecord::Base
 	# tagging
 	acts_as_taggable
 	acts_as_taggable_on :tag_list
+
+	# pagination
+	paginates_per 10
 end

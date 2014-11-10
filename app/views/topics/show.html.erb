@@ -18,21 +18,22 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h2 class="discussion-declaration">Discussion</h2>	
+				<h2 class="discussion-declaration">Comments</h2>	
 			</div>
 		</div>
-		<% if user_signed_in? %>
+		<% if user_signed_in? && (@topic.comments.count < 300) %>
 		<div class="row">
 			<div class="col-md-12">
+				<%= @topic.comments.count %>
 				<%= render 'comments/form' %>	
 			</div>
 		</div>
 		<% end %>
 		<div class="row"> 
 			<div class="col-md-12 comment-list">
-				<% @topic.comments.each do |comment| %>
-				<p class="Gotham txt18px"><%= comment.user.name %></p>
-				<div class="comment-desc"><p class="ProximaNova"><%= plain_markdown comment.body.to_s %></p></div>
+				<% @topic.comments.each_with_index do |comment, num| %>
+					<p class="Gotham txt18px">[<%= num %>]</p>
+					<div class="comment-desc"><p class="ProximaNova txt18px"><%= plain_markdown comment.body.to_s %></p></div>
 				<% end %>
 			</div>
 		</div>
@@ -42,5 +43,5 @@
 	<%= Pygments.css %>
 	</style>
 	<script>
-	ahoy.trackview();
+		ahoy.trackview();
 	</script>

@@ -25,6 +25,7 @@ Nyanda::Application.routes.draw do
 	resources :categories, :only => [:create, :destroy], :path => '/c' do
 		resources :boards, :only => [:index], :path => '' do
 	    resources :topics, :path => '' do
+	    	get 'page/:page', :action => :index, :on => :collection
 	    end
 	  end
 	end
