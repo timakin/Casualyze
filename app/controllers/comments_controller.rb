@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     @board    = @category.boards.friendly.find(params[:comment][:board_id])
     @topic    = @board.topics.find(params[:comment][:topic_id])
     @comment  = @topic.comments.new(comment_params)
-    @comment.user_id = current_user.id
+    #@comment.user_id = current_user.id
 
     respond_to do |format|
       if @comment.save

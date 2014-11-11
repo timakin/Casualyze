@@ -1,7 +1,7 @@
 	<div class="container container-fluid">
 		<div class="row">
 			<div class="col-md-12 col-topic-title">
-				<span class="posteby-name">Posted by <%= @topic.user.name %></span>
+
 				<span class="access-count"><%= @count_of_access %> views</span>
 
 				<h1 class="topic_title"><%= @topic.title %></h1>
@@ -21,14 +21,7 @@
 				<h2 class="discussion-declaration">Comments</h2>	
 			</div>
 		</div>
-		<% if user_signed_in? && (@topic.comments.count < 300) %>
-		<div class="row">
-			<div class="col-md-12">
-				<%= @topic.comments.count %>
-				<%= render 'comments/form' %>	
-			</div>
-		</div>
-		<% end %>
+
 		<div class="row"> 
 			<div class="col-md-12 comment-list">
 				<% @topic.comments.each_with_index do |comment, num| %>
@@ -37,6 +30,14 @@
 				<% end %>
 			</div>
 		</div>
+
+		<% if (@topic.comments.count < 300) %>
+		<div class="row">
+			<div class="col-md-12">
+				<%= render 'comments/form' %>	
+			</div>
+		</div>
+		<% end %>
 	</div>
 
 	<style>

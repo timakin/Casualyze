@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:edit, :new, :update, :destroy, :create]
+  #before_action :authenticate_user!, only: [:edit, :new, :update, :destroy, :create]
   after_action  :add_visit_count, only: :show
 
   # GET /topics
@@ -44,7 +44,7 @@ class TopicsController < ApplicationController
     @board = set_board
     @topic = @board.topics.new(topic_params)
     @topic.category_id = @category.id
-    @topic.user_id = current_user.id
+    #@topic.user_id = current_user.id
 
     respond_to do |format|
       if @topic.save
