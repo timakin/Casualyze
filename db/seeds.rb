@@ -8,33 +8,16 @@
 
 # Category_params
 Category.create(name: 'lang')
-Category.create(name: 'infra')
-Category.create(name: 'device')
-Category.create(name: 'startup')
+Category.create(name: 'dev')
+Category.create(name: 'news')
+Category.create(name: 'service')
+Category.create(name: 'learning')
 Category.create(name: 'other')
 
 # Boards_params
-Board.create(board_name: 'Go', category_id: 1)
-Board.create(board_name: 'Python', category_id: 1)
-Board.create(board_name: 'Ruby', category_id: 1)
-Board.create(board_name: 'PHP', category_id: 1)
-Board.create(board_name: 'C', category_id: 1)
-Board.create(board_name: 'JavaScript', category_id: 1)
-Board.create(board_name: 'Java', category_id: 1)
-Board.create(board_name: 'Objective-C', category_id: 1)
-
-Board.create(board_name: 'VM', category_id: 2)
-Board.create(board_name: 'Unix', category_id: 2)
-
-Board.create(board_name: 'PC', category_id: 3)
-Board.create(board_name: 'Mobile', category_id: 3)
-Board.create(board_name: 'VRAR', category_id: 3)
-Board.create(board_name: 'IoT', category_id: 3)
-Board.create(board_name: 'Peripherals', category_id: 3)
-
-Board.create(board_name: 'Entrepreneur', category_id: 4)
-Board.create(board_name: 'VC', category_id: 4)
-Board.create(board_name: 'M&A', category_id: 4)
-
-Board.create(board_name: 'Newbie', category_id: 5)
-Board.create(board_name: 'Whatever', category_id: 5)
+Board.create(board_name: 'Lang', category_id: 1)
+Board.create(board_name: 'Dev', category_id: 2)
+Board.create(board_name: 'News', category_id: 3)
+Board.create(board_name: 'App', category_id: 4)
+Board.create(board_name: 'Learn', category_id: 5)
+Board.create(board_name: 'Anything', category_id: 6)

@@ -7,21 +7,22 @@ GIT
 
 GIT
   remote: git://github.com/decioferreira/bootstrap-generators.git
-  revision: 8627bb97720bbad9b037faba92382759ff68706d
+  revision: 52d3502a3b01cd6d4f4c01f9f97fe69feec03c0c
   specs:
-    bootstrap-generators (3.2.0)
+    bootstrap-generators (3.3.1)
       railties (>= 3.1.0)
 
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: 05778f4b7c8e821d584c7b4b08bcd79c02a0db76
+  revision: 99d76711783c229965095d4b818d02b46093ba5e
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0, >= 1.0.2)
       bourbon
       coffee-rails
       formtastic (~> 3.0)
-      inherited_resources (~> 1.4.1)
+      formtastic_i18n
+      inherited_resources (~> 1.4, != 1.5.0)
       jquery-rails
       jquery-ui-rails (~> 5.0)
       kaminari (~> 0.15)
@@ -42,9 +43,9 @@ GIT
 
 GIT
   remote: https://github.com/thomas-mcdonald/bootstrap-sass.git
-  revision: 452506d6be0827ca1451e3732ce6eec9f87ce547
+  revision: 41ea576e9d611a9b2fffe4b1e0759ee7824858bc
   specs:
-    bootstrap-sass (3.2.0.2)
+    bootstrap-sass (3.3.1.0)
       sass (~> 3.2)
 
 GEM
@@ -81,9 +82,10 @@ GEM
       activerecord (>= 3.2, < 5)
     acts_as_commentable (4.0.2)
     addressable (2.3.6)
-    ahoy_matey (1.0.2)
+    ahoy_matey (1.1.0)
       addressable
       browser (>= 0.4.0)
+      errbase
       geocoder
       referer-parser
       request_store
@@ -92,7 +94,7 @@ GEM
     arbre (1.0.2)
       activesupport (>= 3.0.0)
     arel (4.0.2)
-    bcrypt (3.1.7)
+    bcrypt (3.1.9)
     better_errors (2.0.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -102,7 +104,8 @@ GEM
     bourbon (3.2.3)
       sass (~> 3.2)
       thor
-    browser (0.7.0)
+    bower-rails (0.9.2)
+    browser (0.7.2)
     builder (3.1.4)
     callsite (0.0.11)
     cancan (1.6.10)
@@ -156,7 +159,7 @@ GEM
     coffee-script-source (1.8.0)
     colorize (0.7.3)
     debug_inspector (0.0.2)
-    devise (3.4.0)
+    devise (3.4.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
@@ -167,6 +170,7 @@ GEM
     dropzonejs-rails (0.5.1)
       rails (> 3.1)
     ejs (1.1.1)
+    errbase (0.0.2)
     erubis (2.7.0)
     execjs (2.2.2)
     factory_girl (4.5.0)
@@ -184,13 +188,14 @@ GEM
     formatador (0.2.5)
     formtastic (3.0.0)
       actionpack (>= 3.2.13)
+    formtastic_i18n (0.1.1)
     friendly_id (5.0.4)
       activerecord (>= 4.0.0)
-    geocoder (1.2.5)
+    geocoder (1.2.6)
     google-analytics-rails (0.0.6)
     google-analytics-turbolinks (0.0.4)
     growl (1.0.3)
-    guard (2.6.1)
+    guard (2.8.2)
       formatador (>= 0.2.4)
       listen (~> 2.7)
       lumberjack (~> 1.0)
@@ -214,9 +219,11 @@ GEM
       unicode-display_width (~> 0.1.1)
     hitimes (1.2.2)
     i18n (0.6.11)
-    inherited_resources (1.4.1)
+    inherited_resources (1.5.1)
+      actionpack (>= 3.2, < 4.2)
       has_scope (~> 0.6.0.rc)
-      responders (~> 1.0.0.rc)
+      railties (>= 3.2, < 4.2)
+      responders (~> 1.0)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -234,7 +241,7 @@ GEM
     libnotify (0.8.4)
       ffi (>= 1.0.11)
     libv8 (3.16.14.7)
-    listen (2.7.11)
+    listen (2.7.12)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
@@ -248,19 +255,18 @@ GEM
       railties (>= 3.0.0, < 5.0.0)
     method_source (0.8.2)
     mime-types (1.25.1)
-    mini_magick (3.8.1)
-      subexec (~> 0.2.1)
-    mini_portile (0.6.0)
+    mini_magick (4.0.0)
+    mini_portile (0.6.1)
     minitest (4.7.5)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    mysql2 (0.3.16)
+    mysql2 (0.3.17)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
-    nokogiri (1.6.3.1)
-      mini_portile (= 0.6.0)
+    nokogiri (1.6.4.1)
+      mini_portile (~> 0.6.0)
     oauth (0.4.7)
     oauth2 (1.0.0)
       faraday (>= 0.8, < 0.10)
@@ -273,7 +279,7 @@ GEM
       rack (~> 1.0)
     omniauth-facebook (2.0.0)
       omniauth-oauth2 (~> 1.2)
-    omniauth-google-oauth2 (0.2.5)
+    omniauth-google-oauth2 (0.2.6)
       omniauth (> 1.0)
       omniauth-oauth2 (~> 1.1)
     omniauth-oauth (1.0.1)
@@ -313,7 +319,7 @@ GEM
     quiet_assets (1.0.3)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
-    rack-contrib (1.1.0)
+    rack-contrib (1.2.0)
       rack (>= 0.9.1)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -349,7 +355,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.13.0)
     rake (10.3.2)
-    ransack (1.4.1)
+    ransack (1.5.1)
       actionpack (>= 3.0)
       activerecord (>= 3.0)
       activesupport (>= 3.0)
@@ -366,8 +372,8 @@ GEM
     ref (1.0.5)
     referer-parser (0.3.0)
     request_store (1.1.0)
-    responders (1.0.0)
-      railties (>= 3.2, < 5)
+    responders (1.1.2)
+      railties (>= 3.2, < 4.2)
     rmagick (2.13.3)
     rspec (3.1.0)
       rspec-core (~> 3.1.0)
@@ -394,10 +400,10 @@ GEM
       capistrano (~> 3.0)
       sshkit (>= 1.2)
     sass (3.2.19)
-    sass-rails (4.0.3)
+    sass-rails (4.0.4)
       railties (>= 4.0.0, < 5.0)
-      sass (~> 3.2.0)
-      sprockets (~> 2.8, <= 2.11.0)
+      sass (~> 3.2.2)
+      sprockets (~> 2.8, < 2.12)
       sprockets-rails (~> 2.0)
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
@@ -408,7 +414,7 @@ GEM
       activesupport (>= 3.0.0)
     slop (3.6.0)
     spork (0.9.2)
-    sprockets (2.11.0)
+    sprockets (2.11.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
@@ -421,7 +427,6 @@ GEM
       colorize
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
-    subexec (0.2.3)
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
@@ -433,9 +438,9 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (2.4.0)
+    turbolinks (2.5.2)
       coffee-rails
-    tzinfo (0.3.41)
+    tzinfo (0.3.42)
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
@@ -445,7 +450,7 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
-    user_agent_parser (2.1.5)
+    user_agent_parser (2.2.0)
     uuidtools (2.1.5)
     warden (1.2.3)
       rack (>= 1.0)
@@ -453,7 +458,7 @@ GEM
       activemodel (~> 4.0)
       railties (~> 4.0)
       sprockets-rails (~> 2.0)
-    whenever (0.9.3)
+    whenever (0.9.4)
       chronic (>= 0.6.3)
     will_paginate (3.0.7)
     xpath (2.0.0)
@@ -476,6 +481,7 @@ DEPENDENCIES
   bootstrap-generators!
   bootstrap-sass!
   bourbon
+  bower-rails
   cancan
   capistrano (~> 3.2.1)
   capistrano-bundler
@@ -496,7 +502,7 @@ DEPENDENCIES
   google-analytics-rails
   google-analytics-turbolinks
   growl
-  guard
+  guard (~> 2.8)
   guard-rspec
   guard-spork
   hirb

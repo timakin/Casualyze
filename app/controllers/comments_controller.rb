@@ -15,6 +15,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
+        update_topic(@topic)
         format.html { redirect_to [@category, @board, @topic], notice: 'Comment was successfully created.' }
         format.json { render action: 'show', status: :created, location: @comment }
       else
@@ -33,5 +34,9 @@ class CommentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
       params.require(:comment).permit(:name, :body, :topic_id, :category_id, :board_id)
+    end
+
+    def update_topic(topic)
+      topic.update_attributes(:updated_at => Time.now)
     end
 end

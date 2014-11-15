@@ -1,4 +1,3 @@
-test
 <% @topics.each do |t| %>
 	<p><%= link_to t.title, category_board_topic_path(t.category_id, t.board_id, t.id) %></p>
 	<p><%= t.created_at.to_formatted_s(:extra_short) %></p>

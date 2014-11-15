@@ -59,7 +59,7 @@ group :development, :test do
   gem 'shoulda-matchers', require: false
 
   # Guard
-  gem 'guard'
+  gem 'guard', '~> 2.8'
   gem 'guard-spork'
 
   # Notify
@@ -148,6 +148,8 @@ gem "therubyracer"
 gem 'unicorn'
 # cron
 gem 'whenever', require: false
+
+gem 'bower-rails'
 
 group :deployment do
   gem "capistrano", '~> 3.2.1'
