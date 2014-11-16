@@ -3,6 +3,7 @@ class HomeController < ApplicationController
   	@boards = Board.all
   	@popular_topics = Topic.joins(:topic_visits)
   												 .group('topic_visits.topic_id')
+                           .where('topics.created_at >= ?', 1.week.ago)
   												 .order("count(topic_visits.topic_id) desc")
   												 .limit(5)
   	@latest_topics 	= Topic.all(limit: 5, order: 'created_at desc')

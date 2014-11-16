@@ -48,7 +48,7 @@
 				<% @latest_topics.each do |t| %>
 				<li class="list-group-item list-group-item-home">
 					<%= link_to t.title, category_board_topic_path(Category.find(t.category_id).name, Board.find(t.board_id).board_name, t.id), class: 'list-group-item-title-latest' %>
-					<span class="pull-right">1 days ago</span>
+					<!--<span class="pull-right">1 days ago</span>-->
 				</li>
 				<% end %>
 			</ul>
@@ -61,7 +61,7 @@
 <script>
 $(function(){
 	var $setElm = $('ul li a.list-group-item-title-pop');
-	var cutFigure = '40'; // カットする文字数
+	var cutFigure = '30'; // カットする文字数
 	var afterTxt = ' …'; // 文字カット後に表示するテキスト
 
 	$setElm.each(function(){
@@ -77,7 +77,7 @@ $(function(){
 });
 $(function(){
 	var $setElm = $('ul li a.list-group-item-title-latest');
-	var cutFigure = '25'; // カットする文字数
+	var cutFigure = '30'; // カットする文字数
 	var afterTxt = ' …'; // 文字カット後に表示するテキスト
 
 	$setElm.each(function(){
