@@ -15,7 +15,7 @@
         <div class="bs-callout bs-callout-info topic_title <%= cycle("odd", "even")%>">
           <p>
             <%= link_to t.title, category_board_topic_path(@category, @board, t) %>
-            <p><span><%= t.created_at.to_formatted_s(:extra_short) %></span></p>
+            <p class="topic-created-at"><span><%= t.created_at.to_formatted_s(:extra_short) %></span></p>
           </p>
         </div>
       </div>
@@ -26,4 +26,3 @@
     </div>
   </div>
 </div>
-

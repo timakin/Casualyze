@@ -123,7 +123,7 @@ gem 'ahoy_matey'
 gem 'activeuuid', '>= 0.5.0'
 
 # default
-gem 'turbolinks'
+#gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 # GA
